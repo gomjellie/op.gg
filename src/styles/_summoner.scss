@@ -241,9 +241,43 @@
 
       .Overview {
         @include useDefaultBorder();
+        display: flex;
+        flex-direction: row;
         width: 100%;
-        height: 250px;
+        height: 198px;
         margin-bottom: $defaultMargin;
+
+        .OveralWinRate {
+          display: flex;
+          flex-direction: row;
+          width: 300px;
+          
+          .Left {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 140px;
+            align-items: center;
+            background-color: lightcyan;
+
+          }
+
+          .Right {
+            height: 100%;
+            width: 160px;
+            background-color: lightsteelblue;
+          }
+        }
+
+        .MostChampWinRate {
+          width: 250px;
+          background-color: lightgreen;
+        }
+
+        .MostPositionWinRate {
+          flex: 2;
+          background-color: lightpink;
+        }
       }
 
       .GameRecords {

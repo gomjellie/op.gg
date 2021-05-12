@@ -500,9 +500,61 @@
 
 .Summoner main.SummonerBody .RealContent .Overview {
   border: 1px solid #cdd2d2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
-  height: 250px;
+  height: 198px;
   margin-bottom: 0.8rem;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 300px;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 140px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightcyan;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right {
+  height: 100%;
+  width: 160px;
+  background-color: lightsteelblue;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRate {
+  width: 250px;
+  background-color: lightgreen;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .MostPositionWinRate {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: lightpink;
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords {

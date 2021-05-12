@@ -107,7 +107,16 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
             <div className="QueueType Selected">Ranked Solo</div>
             <div className="QueueType">Ranked Flex</div>
           </div>
-          <div className="Overview"></div>
+          <div className="Overview">
+            <div className="OveralWinRate">
+              <div className="Left">
+                <div className="CurrentTwentyGames">20전 11승 9패</div>
+              </div>
+              <div className="Right"></div>
+            </div>
+            <div className="MostChampWinRate"></div>
+            <div className="MostPositionWinRate"></div>
+          </div>
           <div className="GameRecords">
             <div className="GameRecord"></div>
             <div className="GameRecord"></div>
