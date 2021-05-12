@@ -182,17 +182,16 @@
   gap: 0.8rem;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo {
+.Summoner main.SummonerBody .SideContent .RankGame {
   border: 1px solid #cdd2d2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 140px;
   width: 100%;
   background-color: #f2f2f2;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankIconWrapper {
+.Summoner main.SummonerBody .SideContent .RankGame .RankIconWrapper {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
@@ -213,12 +212,17 @@
      object-fit: scale-down;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankIconWrapper img.SoloRankIcon {
+.Summoner main.SummonerBody .SideContent .RankGame .RankIconWrapper img.RankIcon {
   height: 104px;
   width: 104px;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo {
+.Summoner main.SummonerBody .SideContent .RankGame .RankIconWrapper img.UnRanked {
+  height: 54px;
+  width: 54px;
+}
+
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo {
   -webkit-box-flex: 6;
       -ms-flex: 6;
           flex: 6;
@@ -229,35 +233,36 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  gap: 0.2rem;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.GameType {
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo div.GameType {
   font-size: 11px;
   color: #879292;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.PreferredPosition {
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo div.PreferredPosition {
   font-weight: bold;
   font-size: 12px;
   color: #353a3a;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Tier {
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo div.Tier {
   font-family: Helvetica;
   font-weight: bold;
   font-size: 15px;
   color: #1f8ecd;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Points {
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo div.Points {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -270,27 +275,20 @@
           align-items: center;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Points .LP {
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo div.Points .LP {
   font-size: 12px;
   font-weight: bold;
   color: #555e5e;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Points .WL {
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo div.Points .WL {
   font-size: 12px;
   color: #879292;
 }
 
-.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.LeagueName {
+.Summoner main.SummonerBody .SideContent .RankGame .RankInfo div.LeagueName {
   font-size: 12px;
   color: #879292;
-}
-
-.Summoner main.SummonerBody .SideContent .FlexRank {
-  border: 1px solid #cdd2d2;
-  height: 140px;
-  width: 100%;
-  background-color: #f2f2f2;
 }
 
 .Summoner main.SummonerBody .SideContent .WinRateBox {

@@ -4,6 +4,7 @@ import GGSvg from "../../assets/GG.svg";
 import AvatarImg from "../../assets/avatar.jpg";
 import GoldBracket from "../../assets/gold.png";
 import RankIcon from "../../assets/gold_3.png";
+import UnRankedIcon from "../../assets/unranked@2x.png";
 
 interface MatchParams {
   userName: string;
@@ -17,7 +18,7 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
       <div className="SearchBar">
         <div className="SearchInputBox">
           <input placeholder="소환사명, 챔피언..."></input>
-          <img height="14" src={GGSvg} alt="GG"/>
+          <img height="14" src={GGSvg} alt="GG" />
         </div>
       </div>
       <div className="QuickLook">
@@ -28,9 +29,9 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
           <div className="SeasonBadge">S2020 Gold</div>
         </div>
         <div className="QuickLookBottomContainer">
-          <img className="Avatar" src={AvatarImg} alt="avatar"/>
+          <img className="Avatar" src={AvatarImg} alt="avatar" />
           <img className="BorderImage" src={GoldBracket} alt="bracket" />
-            
+
           <div className="UserNameAndRaderInfo">
             <div className="UserName"> {userName} </div>
             <div className="LadderRank">Ladder Rank 962,248 (26% of top)</div>
@@ -39,11 +40,11 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
       </div>
       <main className="SummonerBody">
         <div className="SideContent">
-          <div className="RankedSolo">
-            <div className="SoloRankIconWrapper">
-              <img className="SoloRankIcon"  src={RankIcon} alt="gold3" />
+          <div className="RankGame">
+            <div className="RankIconWrapper">
+              <img className="RankIcon" src={RankIcon} alt="gold3" />
             </div>
-            <div className="SoloRankInfo">
+            <div className="RankInfo">
               <div className="GameType">Ranked Solo</div>
               <div className="PreferredPosition">top (total 27 Played)</div>
               <div className="Tier">Platinum 2</div>
@@ -54,7 +55,15 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
               <div className="LeagueName">Win Ratio 55%</div>
             </div>
           </div>
-          <div className="FlexRank"></div>
+          <div className="RankGame">
+            <div className="RankIconWrapper">
+              <img className="UnRanked" src={UnRankedIcon} alt="gold3" />
+            </div>
+            <div className="RankInfo">
+              <div className="GameType">Flex 5:5 Rank</div>
+              <div className="Tier">Unranked</div>
+            </div>
+          </div>
           <div className="WinRateBox"></div>
         </div>
         <div className="RealContent">

@@ -20,36 +20,42 @@
       margin-left: $defaultMargin;
       gap: $defaultMargin;
 
-      .RankedSolo {
+      .RankGame {
         @include useDefaultBorder();
 
         display: flex;
-        height: 140px;
+        // height: 140px;
         width: 100%;
         background-color: #f2f2f2;
 
-        .SoloRankIconWrapper {
+        .RankIconWrapper {
           flex: 4;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           object-fit: scale-down;
-
-          img.SoloRankIcon {
+          
+          img.RankIcon {
             height: 104px;
-            width: 104px;  
+            width: 104px;
+          }
+
+          img.UnRanked {
+            height: 54px;
+            width: 54px;
           }
         }
 
-        .SoloRankInfo {
+        .RankInfo {
           flex: 6;
           display: flex;
           flex-direction: column;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
+          margin-top: 2rem;
+          margin-bottom: 1.5rem;
           justify-content: space-evenly;
           align-items: flex-start;
+          gap: 0.2rem;
 
           div.GameType {
             font-size: 11px;
@@ -90,13 +96,6 @@
             color: #879292;
           }
         }
-      }
-
-      .FlexRank {
-        @include useDefaultBorder();
-        height: 140px;
-        width: 100%;
-        background-color: #f2f2f2;
       }
 
       .WinRateBox {
