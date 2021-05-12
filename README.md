@@ -22,5 +22,5 @@ See the section about deployment for more information.
 
 ## `npx serve -s build`
 
-Serve the app for production build.
+Serves the app for production build.
 
