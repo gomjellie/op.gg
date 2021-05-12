@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./searchBar";
+@import "./quickLook";
 
 html {
   height: 100%;
@@ -9,6 +10,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont;
   margin: 0;
   display: block;
+  background-color: $bgGray;
 }
 
 .root {
@@ -19,3 +21,8 @@ body {
   --HSDSGlobalFontSize: 13px;
 }
 
+.Summoner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

@@ -1,0 +1,70 @@
+.QuickLook {
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+  width: 90%;
+  align-self: center;
+  // background-color: lightblue;
+  border-bottom: 1px solid $dividerGray;
+
+  .Seasons {
+    margin-top: $defaultMargin;
+    margin-left: $defaultMargin;
+    display: flex;
+    flex-direction: row;
+    gap: $defaultMargin;
+
+    .SeasonBadge {
+      font-size: 11px;
+      font-family: "Helvetica-Bold";
+      padding: 2px 4px;
+      color: #657070;
+      background-color: #e0e3e3;
+      border: 1px solid #d0d3d4;
+      border-radius: 4px;
+    }
+  }
+  .QuickLookBottomContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: flex-start;
+    margin-top: $defaultMargin;
+    height: 130px;
+    width: 100%;
+
+    .Avatar {
+      height: 100px;
+      width: 100px;
+      background-color: lightcyan;
+      margin-left: $defaultMargin;
+    }
+
+    .BorderImage {
+      position: absolute;
+      left: 3px;
+      top: -10px;
+    }
+
+    .UserNameAndRaderInfo {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-left: $defaultMargin;
+
+      .UserName {
+        font-family: "AppleSDGothicNeo-Bold";
+        font-size: 20px;
+        color: #242929;
+      }
+
+      .LadderRank {
+        font-family: "AppleSDGothicNeo-Regular";
+        font-size: 11px;
+        color: #657070;
+      }
+    }
+  }
+}

@@ -39,6 +39,104 @@
   outline: none;
 }
 
+.QuickLook {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 170px;
+  width: 90%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.QuickLook .Seasons {
+  margin-top: 0.8rem;
+  margin-left: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.8rem;
+}
+
+.QuickLook .Seasons .SeasonBadge {
+  font-size: 11px;
+  font-family: "Helvetica-Bold";
+  padding: 2px 4px;
+  color: #657070;
+  background-color: #e0e3e3;
+  border: 1px solid #d0d3d4;
+  border-radius: 4px;
+}
+
+.QuickLook .QuickLookBottomContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 0.8rem;
+  height: 130px;
+  width: 100%;
+}
+
+.QuickLook .QuickLookBottomContainer .Avatar {
+  height: 100px;
+  width: 100px;
+  background-color: lightcyan;
+  margin-left: 0.8rem;
+}
+
+.QuickLook .QuickLookBottomContainer .BorderImage {
+  position: absolute;
+  left: 3px;
+  top: -10px;
+}
+
+.QuickLook .QuickLookBottomContainer .UserNameAndRaderInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 0.8rem;
+}
+
+.QuickLook .QuickLookBottomContainer .UserNameAndRaderInfo .UserName {
+  font-family: "AppleSDGothicNeo-Bold";
+  font-size: 20px;
+  color: #242929;
+}
+
+.QuickLook .QuickLookBottomContainer .UserNameAndRaderInfo .LadderRank {
+  font-family: "AppleSDGothicNeo-Regular";
+  font-size: 11px;
+  color: #657070;
+}
+
 html {
   height: 100%;
 }
@@ -47,6 +145,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont;
   margin: 0;
   display: block;
+  background-color: #eaeaea;
 }
 
 .root {
@@ -55,5 +154,16 @@ body {
   --HSDSGlobalFontFamilyMono: "SFMono-Regular", Consolas, "Liberation Mono",
     Menlo, Courier, monospace;
   --HSDSGlobalFontSize: 13px;
+}
+
+.Summoner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,9 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import GGSvg from "../../assets/GG.svg";
+import AvatarImg from "../../assets/avatar.jpg";
+import GoldBracket from "../../assets/gold.png";
+
 interface MatchParams {
   userName: string;
 }
@@ -16,7 +19,23 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
           <img height="14" src={GGSvg} alt="GG"/>
         </div>
       </div>
-      hi {userName}
+      <div className="QuickLook">
+        <div className="Seasons">
+          <div className="SeasonBadge">S7 Silver</div>
+          <div className="SeasonBadge">S8 Silver</div>
+          <div className="SeasonBadge">S9 Gold</div>
+          <div className="SeasonBadge">S2020 Gold</div>
+        </div>
+        <div className="QuickLookBottomContainer">
+          <img className="Avatar" src={AvatarImg} alt="avatar"/>
+          <img className="BorderImage" src={GoldBracket} alt="bracket" />
+            
+          <div className="UserNameAndRaderInfo">
+            <div className="UserName"> {userName} </div>
+            <div className="LadderRank">Ladder Rank 962,248 (26% of top)</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
