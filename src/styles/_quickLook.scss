@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   height: 170px;
-  width: 90%;
+  width: 100%;
   align-self: center;
   border-bottom: 1px solid $dividerGray;
+  margin-left: 8rem;
 
   .Seasons {
     margin-top: $defaultMargin;

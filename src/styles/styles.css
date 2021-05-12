@@ -48,10 +48,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   height: 170px;
-  width: 90%;
+  width: 100%;
   -ms-flex-item-align: center;
       align-self: center;
   border-bottom: 1px solid #d8d8d8;
+  margin-left: 8rem;
 }
 
 .QuickLook .Seasons {
@@ -176,23 +177,36 @@
       -ms-flex-align: end;
           align-items: flex-end;
   min-width: 300px;
-  background-color: lightcyan;
   margin-left: 0.8rem;
+  gap: 0.8rem;
 }
 
 .Summoner main.SummonerBody .SideContent .RankedSolo {
+  border: 1px solid #cdd2d2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 180px;
+  height: 150px;
   width: 100%;
-  background-color: lightsalmon;
 }
 
 .Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankIconWrapper {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: gray;
 }
 
@@ -200,18 +214,101 @@
   -webkit-box-flex: 6;
       -ms-flex: 6;
           flex: 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .Summoner main.SummonerBody .SideContent .FlexRank {
-  height: 200px;
+  border: 1px solid #cdd2d2;
+  height: 150px;
   width: 100%;
-  background-color: lightcyan;
+}
+
+.Summoner main.SummonerBody .SideContent .WinRateBox {
+  border: 1px solid #cdd2d2;
+  height: 350px;
+  width: 100%;
 }
 
 .Summoner main.SummonerBody .RealContent {
-  height: 200px;
-  width: 800px;
-  background-color: lightpink;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 350px);
+  margin-bottom: 0.8rem;
+}
+
+.Summoner main.SummonerBody .RealContent .QueueTypes {
+  border: 1px solid #cdd2d2;
+  border-bottom: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.Summoner main.SummonerBody .RealContent .QueueTypes .QueueType {
+  margin-left: 0.8rem;
+  font-size: 12px;
+  color: #555555;
+  cursor: pointer;
+}
+
+.Summoner main.SummonerBody .RealContent .QueueTypes .QueueType.Selected {
+  color: #1ea1f7;
+  padding: 7px 0px;
+  border-bottom: 2px solid #1ea1f7;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview {
+  border: 1px solid #cdd2d2;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 0.8rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 0.8rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord {
+  border: 1px solid #cdd2d2;
+  height: 98px;
 }
 
 html {

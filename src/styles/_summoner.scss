@@ -1,4 +1,3 @@
-
 .Summoner {
   display: flex;
   flex-direction: column;
@@ -12,42 +11,104 @@
     margin-left: 2.5rem;
     margin-top: $defaultMargin;
     gap: $defaultMargin;
-    
+
     .SideContent {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       min-width: 300px;
-      background-color: lightcyan;
       margin-left: $defaultMargin;
+      gap: $defaultMargin;
 
       .RankedSolo {
+        @include useDefaultBorder();
+
         display: flex;
-        height: 180px;
+        height: 150px;
         width: 100%;
-        background-color: lightsalmon;
 
         .SoloRankIconWrapper {
           flex: 4;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           background-color: gray;
         }
 
         .SoloRankInfo {
           flex: 6;
+          display: flex;
+          flex-direction: column;
+          justify-items: flex-start;
+          align-items: flex-start;
         }
       }
 
       .FlexRank {
-        height: 200px;
+        @include useDefaultBorder();
+        height: 150px;
         width: 100%;
-        background-color: lightcyan;
+      }
+
+      .WinRateBox {
+        @include useDefaultBorder();
+        height: 350px;
+        width: 100%;
       }
     }
 
     .RealContent {
-      height: 200px;
-      width: 800px;
-      background-color: lightpink;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(100% - 350px);
+      margin-bottom: $defaultMargin;
+
+      .QueueTypes {
+        @include useDefaultBorder();
+        border-bottom: none;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+
+        .QueueType {
+          margin-left: $defaultMargin;
+          font-size: 12px;
+          color: #555555;
+
+          &.Selected {
+            color: $bannerBlue;
+            padding: 7px 0px;
+            border-bottom: 2px solid $bannerBlue;
+          }
+
+          cursor: pointer;
+        }
+      }
+
+      .Overview {
+        @include useDefaultBorder();
+        width: 100%;
+        height: 250px;
+        margin-bottom: $defaultMargin;
+      }
+
+      .GameRecords {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: $defaultMargin;
+
+        .GameRecord {
+          @include useDefaultBorder();
+          height: 98px;
+        }
+      }
     }
   }
 }
