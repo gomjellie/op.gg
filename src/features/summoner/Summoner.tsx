@@ -3,6 +3,7 @@ import { RouteComponentProps } from "react-router-dom";
 import GGSvg from "../../assets/GG.svg";
 import AvatarImg from "../../assets/avatar.jpg";
 import GoldBracket from "../../assets/gold.png";
+import RankIcon from "../../assets/gold_3.png";
 
 interface MatchParams {
   userName: string;
@@ -39,8 +40,19 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
       <main className="SummonerBody">
         <div className="SideContent">
           <div className="RankedSolo">
-            <div className="SoloRankIconWrapper"></div>
-            <div className="SoloRankInfo"></div>
+            <div className="SoloRankIconWrapper">
+              <img className="SoloRankIcon"  src={RankIcon} alt="gold3" />
+            </div>
+            <div className="SoloRankInfo">
+              <div className="GameType">Ranked Solo</div>
+              <div className="PreferredPosition">top (total 27 Played)</div>
+              <div className="Tier">Platinum 2</div>
+              <div className="Points">
+                <div className="LP">80 Lp </div>
+                <div className="WL">&nbsp; / 17W 14L</div>
+              </div>
+              <div className="LeagueName">Win Ratio 55%</div>
+            </div>
           </div>
           <div className="FlexRank"></div>
           <div className="WinRateBox"></div>

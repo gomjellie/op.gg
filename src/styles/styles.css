@@ -52,11 +52,11 @@
   -ms-flex-item-align: center;
       align-self: center;
   border-bottom: 1px solid #d8d8d8;
-  margin-left: 8rem;
 }
 
 .QuickLook .Seasons {
   margin-top: 0.8rem;
+  padding-left: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,8 +93,9 @@
       -ms-flex-align: start;
           align-items: flex-start;
   margin-top: 0.8rem;
+  left: 4rem;
   height: 130px;
-  width: 100%;
+  width: calc(100% - 4rem);
 }
 
 .QuickLook .QuickLookBottomContainer .Avatar {
@@ -186,8 +187,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 150px;
+  height: 140px;
   width: 100%;
+  background-color: #f2f2f2;
 }
 
 .Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankIconWrapper {
@@ -207,7 +209,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: gray;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankIconWrapper img.SoloRankIcon {
+  height: 104px;
+  width: 104px;
 }
 
 .Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo {
@@ -221,16 +229,68 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  justify-items: flex-start;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.GameType {
+  font-size: 11px;
+  color: #879292;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.PreferredPosition {
+  font-weight: bold;
+  font-size: 12px;
+  color: #353a3a;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Tier {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 15px;
+  color: #1f8ecd;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Points {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Points .LP {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555e5e;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.Points .WL {
+  font-size: 12px;
+  color: #879292;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo div.LeagueName {
+  font-size: 12px;
+  color: #879292;
+}
+
 .Summoner main.SummonerBody .SideContent .FlexRank {
   border: 1px solid #cdd2d2;
-  height: 150px;
+  height: 140px;
   width: 100%;
+  background-color: #f2f2f2;
 }
 
 .Summoner main.SummonerBody .SideContent .WinRateBox {
@@ -272,6 +332,7 @@
           align-items: center;
   width: 100%;
   gap: 1rem;
+  background-color: #f2f2f2;
 }
 
 .Summoner main.SummonerBody .RealContent .QueueTypes .QueueType {
