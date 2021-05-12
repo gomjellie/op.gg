@@ -1,0 +1,59 @@
+.SearchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-family: "AppleSDGothicNeo";
+  background-color: #1ea1f7;
+  height: 97px;
+}
+
+.SearchBar .SearchInputBox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 50px;
+      grid-template-columns: 1fr 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 4rem;
+  margin-bottom: 1rem;
+  height: 32px;
+  width: 260px;
+  border-radius: 0.3rem;
+  background-color: white;
+}
+
+.SearchBar .SearchInputBox input {
+  margin-left: 1rem;
+  border: none;
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont;
+  margin: 0;
+  display: block;
+}
+
+.root {
+  --HSDSGlobalFontFamily: "Aktiv Grotesk", "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --HSDSGlobalFontFamilyMono: "SFMono-Regular", Consolas, "Liberation Mono",
+    Menlo, Courier, monospace;
+  --HSDSGlobalFontSize: 13px;
+}
+/*# sourceMappingURL=styles.css.map */

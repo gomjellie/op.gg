@@ -1,0 +1,21 @@
+@import "./variables";
+@import "./searchBar";
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont;
+  margin: 0;
+  display: block;
+}
+
+.root {
+  --HSDSGlobalFontFamily: "Aktiv Grotesk", "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --HSDSGlobalFontFamilyMono: "SFMono-Regular", Consolas, "Liberation Mono",
+    Menlo, Courier, monospace;
+  --HSDSGlobalFontSize: 13px;
+}
+
