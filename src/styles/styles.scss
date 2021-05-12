@@ -1,6 +1,7 @@
 @import "./variables";
 @import "./searchBar";
 @import "./quickLook";
+@import "./summoner";
 
 html {
   height: 100%;
@@ -19,10 +20,4 @@ body {
   --HSDSGlobalFontFamilyMono: "SFMono-Regular", Consolas, "Liberation Mono",
     Menlo, Courier, monospace;
   --HSDSGlobalFontSize: 13px;
-}
-
-.Summoner {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
 }

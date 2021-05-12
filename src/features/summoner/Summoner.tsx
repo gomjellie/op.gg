@@ -36,6 +36,18 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
           </div>
         </div>
       </div>
+      <main className="SummonerBody">
+        <div className="SideContent">
+          <div className="RankedSolo">
+            <div className="SoloRankIconWrapper"></div>
+            <div className="SoloRankInfo"></div>
+          </div>
+          <div className="FlexRank"></div>
+        </div>
+        <div className="RealContent">
+
+        </div>
+      </main>
     </div>
   );
 };

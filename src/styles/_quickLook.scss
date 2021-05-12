@@ -4,14 +4,13 @@
   height: 170px;
   width: 90%;
   align-self: center;
-  // background-color: lightblue;
   border-bottom: 1px solid $dividerGray;
 
   .Seasons {
     margin-top: $defaultMargin;
-    margin-left: $defaultMargin;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     gap: $defaultMargin;
 
     .SeasonBadge {
@@ -36,13 +35,11 @@
     .Avatar {
       height: 100px;
       width: 100px;
-      background-color: lightcyan;
-      margin-left: $defaultMargin;
     }
 
     .BorderImage {
       position: absolute;
-      left: 3px;
+      left: -10px;
       top: -10px;
     }
 

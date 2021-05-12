@@ -1,0 +1,53 @@
+
+.Summoner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  main.SummonerBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    margin-left: 2.5rem;
+    margin-top: $defaultMargin;
+    gap: $defaultMargin;
+    
+    .SideContent {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      min-width: 300px;
+      background-color: lightcyan;
+      margin-left: $defaultMargin;
+
+      .RankedSolo {
+        display: flex;
+        height: 180px;
+        width: 100%;
+        background-color: lightsalmon;
+
+        .SoloRankIconWrapper {
+          flex: 4;
+          background-color: gray;
+        }
+
+        .SoloRankInfo {
+          flex: 6;
+        }
+      }
+
+      .FlexRank {
+        height: 200px;
+        width: 100%;
+        background-color: lightcyan;
+      }
+    }
+
+    .RealContent {
+      height: 200px;
+      width: 800px;
+      background-color: lightpink;
+    }
+  }
+}

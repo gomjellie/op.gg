@@ -56,7 +56,6 @@
 
 .QuickLook .Seasons {
   margin-top: 0.8rem;
-  margin-left: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,6 +63,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 0.8rem;
 }
 
@@ -97,13 +99,11 @@
 .QuickLook .QuickLookBottomContainer .Avatar {
   height: 100px;
   width: 100px;
-  background-color: lightcyan;
-  margin-left: 0.8rem;
 }
 
 .QuickLook .QuickLookBottomContainer .BorderImage {
   position: absolute;
-  left: 3px;
+  left: -10px;
   top: -10px;
 }
 
@@ -137,6 +137,83 @@
   color: #657070;
 }
 
+.Summoner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.Summoner main.SummonerBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 2.5rem;
+  margin-top: 0.8rem;
+  gap: 0.8rem;
+}
+
+.Summoner main.SummonerBody .SideContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  min-width: 300px;
+  background-color: lightcyan;
+  margin-left: 0.8rem;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 180px;
+  width: 100%;
+  background-color: lightsalmon;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankIconWrapper {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  background-color: gray;
+}
+
+.Summoner main.SummonerBody .SideContent .RankedSolo .SoloRankInfo {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.Summoner main.SummonerBody .SideContent .FlexRank {
+  height: 200px;
+  width: 100%;
+  background-color: lightcyan;
+}
+
+.Summoner main.SummonerBody .RealContent {
+  height: 200px;
+  width: 800px;
+  background-color: lightpink;
+}
+
 html {
   height: 100%;
 }
@@ -154,16 +231,5 @@ body {
   --HSDSGlobalFontFamilyMono: "SFMono-Regular", Consolas, "Liberation Mono",
     Menlo, Courier, monospace;
   --HSDSGlobalFontSize: 13px;
-}
-
-.Summoner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
