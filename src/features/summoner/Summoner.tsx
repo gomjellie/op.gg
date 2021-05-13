@@ -13,7 +13,7 @@ interface MatchParams {
   userName: string;
 }
 
-const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
+const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
   const { userName } = match.params;
   const gameType = useSelector(selectGameType);
   const dispatch = useDispatch();
