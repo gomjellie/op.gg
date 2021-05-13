@@ -14,7 +14,7 @@ const WinRatioSummary: React.FC = () => {
     setTab("Rank win rate per week");
   }, []);
 
-  const tabViews = (
+  const renderedTabs = (
     <div className="LRContainer">
       <div className={`ChampsWinRateButton ${tab === "Champion Win Ratio" ? "Selected" : ""}`} onClick={onChampWinRatioClick}>
         Champion Win ratio
@@ -28,7 +28,7 @@ const WinRatioSummary: React.FC = () => {
   if (tab === "Rank win rate per week") {
     return (
       <div className="ChampsWinRatioBox">
-        { tabViews }
+        { renderedTabs }
         {data.recentWinRate.map((item, idx) => (
           <div className="ChampWinRatioItem" key={`ChampWinRatioWeek_${item.name}_${idx}`}>
             <img className="ChampAvatar" src={item.imageUrl} alt="" />
@@ -52,7 +52,7 @@ const WinRatioSummary: React.FC = () => {
 
   return (
     <div className="ChampsWinRatioBox">
-      { tabViews }
+      { renderedTabs }
       {data.champions.map((champ, idx) => {
         const { kills, deaths, assists, games, wins } = champ;
         const prefix = "ChampWinRatio";
