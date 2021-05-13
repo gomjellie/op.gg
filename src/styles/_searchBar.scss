@@ -6,13 +6,12 @@
   font-family: "AppleSDGothicNeo";
   background-color: $bannerBlue;
   height: 97px;
-  
 
   .SearchInputBox {
     display: grid;
     grid-template-columns: 1fr 50px;
     align-items: center;
-    margin-right: 4rem;
+    margin-right: 1rem;
     margin-bottom: 1rem;
     height: 32px;
     width: 260px;

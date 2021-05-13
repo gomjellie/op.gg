@@ -5,10 +5,10 @@
   width: 100%;
   align-self: center;
   border-bottom: 1px solid $dividerGray;
-  
+
   .Seasons {
     margin-top: $defaultMargin;
-    padding-left: 4rem;
+    padding-left: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -30,10 +30,10 @@
     position: relative;
     align-items: flex-start;
     margin-top: $defaultMargin;
-    left: 4rem;
+    left: 5rem;
 
     height: 130px;
-    width: calc(100% - 4rem);
+    width: calc(100% - 5rem);
 
     .Avatar {
       height: 100px;
