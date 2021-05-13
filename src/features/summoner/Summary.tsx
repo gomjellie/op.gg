@@ -93,7 +93,7 @@ const OverView: React.FC = () => {
                 <div className="Up">{champ.name}</div>
                 <div className="Down">
                   <span className="WinRatio">
-                    {fp(champ.wins * 100, champ.games)}
+                    {fp(champ.wins * 100, champ.games, 0)}%
                   </span>
                   <span className="WinLoose">
                     ({champ.wins}W {champ.losses}L)
