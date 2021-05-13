@@ -1,16 +1,8 @@
 import React from "react";
-
-const defaultProfile = {
-  profileImageUrl: 'https://opgg-static.akamaized.net/images/profile_icons/profileIcon1625.jpg',
-  profileBorderImageUrl: "https://opgg-static.akamaized.net/images/borders2/challenger.png",
-  ladderRank: {
-    rank: 164043,
-    rankPercentOfTop: 6,
-  }
-}
+import { exampleSummoner } from "./summoner.t";
 
 const QuickLook: React.FC<{summonerName: string}> = ({summonerName}) => {
-  const {profileImageUrl, profileBorderImageUrl, ladderRank} = defaultProfile;
+  const {profileImageUrl, profileBorderImageUrl, ladderRank} = exampleSummoner;
 
   return (
     <div className="QuickLook">
