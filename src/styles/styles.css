@@ -139,6 +139,10 @@
   color: #657070;
 }
 
+.QuickLook .QuickLookBottomContainer .UserNameAndRaderInfo .LadderRank .Accent {
+  font-weight: bold;
+}
+
 .Summoner {
   display: -webkit-box;
   display: -ms-flexbox;

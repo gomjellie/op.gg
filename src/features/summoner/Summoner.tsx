@@ -14,18 +14,18 @@ interface MatchParams {
 }
 
 const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
-  const { userName } = match.params;
+  // const { userName } = match.params;
   const gameType = useSelector(selectGameType);
   const dispatch = useDispatch();
 
   return (
     <div className="Summoner">
       <SearchBar />
-      <QuickLook summonerName={userName} />
+      <QuickLook />
       <main className="SummonerBody">
         <div className="SideContent">
-          <RankGameOverView summonerName={userName} rankType="솔랭" />
-          <RankGameOverView summonerName={userName} rankType="자유 5:5 랭크" />
+          <RankGameOverView rankType="솔랭" />
+          <RankGameOverView rankType="자유 5:5 랭크" />
           <WinRatioSummary />
         </div>
         <div className="RealContent">
@@ -33,7 +33,7 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
             <div
               className={`QueueType ${gameType === "Total" ? "Selected" : ""}`}
               onClick={(e) => {
-                dispatch(switchGameType({ gameType: "Total"}))
+                dispatch(switchGameType({ gameType: "Total" }));
               }}
             >
               Total
@@ -43,7 +43,7 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
                 gameType === "Ranked Solo" ? "Selected" : ""
               }`}
               onClick={(e) => {
-                dispatch(switchGameType({ gameType: "Ranked Solo"}))
+                dispatch(switchGameType({ gameType: "Ranked Solo" }));
               }}
             >
               Ranked Solo
@@ -53,7 +53,7 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
                 gameType === "Ranked Flex" ? "Selected" : ""
               }`}
               onClick={(e) => {
-                dispatch(switchGameType({ gameType: "Ranked Flex"}))
+                dispatch(switchGameType({ gameType: "Ranked Flex" }));
               }}
             >
               Ranked Flex

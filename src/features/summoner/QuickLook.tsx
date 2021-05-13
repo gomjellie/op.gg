@@ -1,24 +1,35 @@
 import React from "react";
-import { exampleSummoner } from "./summoner.t";
+import { useSelector } from "react-redux";
+import { selectPreviousTiers, selectSummoner } from "./summonerSlice";
 
-const QuickLook: React.FC<{summonerName: string}> = ({summonerName}) => {
-  const {profileImageUrl, profileBorderImageUrl, ladderRank} = exampleSummoner;
+const QuickLook: React.FC = () => {
+  const summoner = useSelector(selectSummoner);
+  const previousTiers = useSelector(selectPreviousTiers);
 
   return (
     <div className="QuickLook">
       <div className="Seasons">
-        <div className="SeasonBadge">S7 Silver</div>
-        <div className="SeasonBadge">S8 Silver</div>
-        <div className="SeasonBadge">S9 Gold</div>
-        <div className="SeasonBadge">S2020 Gold</div>
+        {previousTiers.map((prevTier) => (
+          <div className="SeasonBadge" key={`SeasonBadge_${prevTier.season}`}>
+            S{prevTier.season} {prevTier.shortString}
+          </div>
+        ))}
       </div>
       <div className="QuickLookBottomContainer">
-        <img className="Avatar" src={profileImageUrl} alt="avatar" />
-        <img className="BorderImage" src={profileBorderImageUrl} alt="bracket" />
+        <img className="Avatar" src={summoner.profileImageUrl} alt="avatar" />
+        <img
+          className="BorderImage"
+          src={summoner.profileBorderImageUrl}
+          alt="bracket"
+        />
 
         <div className="UserNameAndRaderInfo">
-          <div className="UserName"> {summonerName} </div>
-          <div className="LadderRank">Ladder Rank {ladderRank.rank} ({ladderRank.rankPercentOfTop}% of top)</div>
+          <div className="UserName"> {summoner.name} </div>
+          <span className="LadderRank">
+            Ladder Rank
+            <span className="Accent"> {summoner.ladderRank.rank} </span> (
+            {summoner.ladderRank.rankPercentOfTop}% of top)
+          </span>
         </div>
       </div>
     </div>

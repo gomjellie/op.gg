@@ -1,14 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import UnrankedIcon from "../../assets/unranked.png";
-import { exampleSummoner } from "./summoner.t";
+import { selectSummoner } from "./summonerSlice";
 
 interface Props {
-  summonerName: string;
   rankType: "솔랭" | "자유 5:5 랭크";
 }
 
-const RankGameOverView: React.FC<Props> = ({ summonerName, rankType }) => {
-  const summoner = exampleSummoner;
+const RankGameOverView: React.FC<Props> = ({ rankType }) => {
+  const summoner = useSelector(selectSummoner);
   const league = summoner.leagues.filter((league) => {
     if (!league.hasResults) return false;
     return league.tierRank.name === rankType;
@@ -17,15 +17,15 @@ const RankGameOverView: React.FC<Props> = ({ summonerName, rankType }) => {
   if (league === undefined) {
     return (
       <div className="RankGame">
-      <div className="RankIconWrapper">
-        <img className="RankIcon" src={UnrankedIcon} alt="gold3" />
+        <div className="RankIconWrapper">
+          <img className="RankIcon" src={UnrankedIcon} alt="gold3" />
+        </div>
+        <div className="RankInfo">
+          <div className="GameType">{rankType}</div>
+          <div className="Tier">Unranked</div>
+        </div>
       </div>
-      <div className="RankInfo">
-        <div className="GameType">{rankType}</div>
-        <div className="Tier">Unranked</div>
-      </div>
-    </div>
-    )
+    );
   }
 
   const winRate = Math.floor(
