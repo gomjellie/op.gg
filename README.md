@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # OP.GG HIRE ME
 
+<img width="1048" alt="Screen Shot 2021-05-14 at 2 18 20 AM" src="https://user-images.githubusercontent.com/13645032/118161657-ce87e180-b45a-11eb-9a83-f0cda049ab4d.png">
+
 ## `npm run start`
 
 Runs the app in the development mode.
