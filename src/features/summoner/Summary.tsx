@@ -87,6 +87,7 @@ const OverView: React.FC = () => {
             <div
               className="MostChampWinRatio"
               key={`MostChampWinRatio_${champ.name}_${idx}`}
+              /* Key 안전하지 않을 수 있음 */
             >
               <img className="ChampAvatar" src={champ.imageUrl} alt="" />
               <div className="RContainer">
@@ -111,7 +112,8 @@ const OverView: React.FC = () => {
         <div className="Title">Preferred Position(Rank)</div>
         {positions.map((position) => {
           return (
-            <div className="LaneInfo">
+            /* Key 안전하지 않을 수 있음 */
+            <div className="LaneInfo" key={`LaneInfo_${position.position}`}>
               <img className="LaneIcon" src={positionImgFactory(position.position as Position)} alt="Sup" />
               <div className="Right">
                 <div className="Up">{position.positionName}</div>
@@ -128,28 +130,6 @@ const OverView: React.FC = () => {
             </div>
           );
         })}
-        {/* <div className="LaneInfo">
-          <img className="LaneIcon" src={SupImg} alt="Sup" />
-          <div className="Right">
-            <div className="Up">Support</div>
-            <div className="Down">
-              <span className="PickRatio">95%</span>
-              <span className="WRPrefix">Win Ratio</span>
-              <span className="WinRatio">47%</span>
-            </div>
-          </div>
-        </div> */}
-        {/* <div className="LaneInfo">
-          <img className="LaneIcon" src={AdcImg} alt="Sup" />
-          <div className="Right">
-            <div className="Up">ADC</div>
-            <div className="Down">
-              <span className="PickRatio">5%</span>
-              <span className="WRPrefix">Win Ratio</span>
-              <span className="WinRatio">100%</span>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
