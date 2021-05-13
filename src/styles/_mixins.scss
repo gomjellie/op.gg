@@ -1,3 +1,11 @@
 @mixin useDefaultBorder() {
   border: 1px solid $borderGray;
 }
+
+@mixin lineLimit($numLine) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $numLine;
+  -webkit-box-orient: vertical;
+}

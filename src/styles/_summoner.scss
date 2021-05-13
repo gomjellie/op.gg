@@ -486,7 +486,286 @@
 
         .GameRecord {
           @include useDefaultBorder();
-          height: 98px;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          height: 100px;
+          width: 100%;
+
+          &.defeat {
+            background-color: #d6b5b2;
+          }
+
+          &.victory {
+            background-color: #b0ceea;
+          }
+
+          .GR1 {
+            width: 70px;
+            color: #555555;
+            font-size: 11px;
+            margin-top: $defaultMargin;
+            margin-bottom: $defaultMargin;
+
+            .GameType {
+              font-weight: bold;
+              margin-bottom: 2px;
+            }
+
+            .Divider {
+              position: relative;
+              margin-top: 0.3rem;
+              margin-bottom: 0.3rem;
+              left: 25%;
+              width: 40%;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .Outcome {
+              margin-bottom: 2px;
+              &.victory {
+                color: #2c709b;
+              }
+
+              &.defeat {
+                color: #d0021b;
+              }
+            }
+          }
+
+          .GR2 {
+            width: 100px;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+
+            .ChampVisuals {
+              display: flex;
+              align-items: center;
+              height: 40px;
+              gap: 4px;
+
+              img.ChampAvatar {
+                display: block;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                object-fit: fill;
+              }
+
+              .Spells {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                img.Spell {
+                  display: block;
+                  width: 20px;
+                  object-fit: scale-down;
+                }
+              }
+
+              .Runes {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                img.Rune {
+                  display: block;
+                  width: 20px;
+                  object-fit: scale-down;
+                }
+              }
+            }
+
+            .ChampName {
+              color: #555555;
+              font-size: 11px;
+            }
+          }
+
+          .GR3 {
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 12px;
+
+            .KDASeperated {
+              font-family: Helvetica;
+              font-weight: bold;
+              font-size: 15px;
+              color: #948e8d;
+              .K {
+                color: #948e8d;
+                margin-right: 0.2rem;
+              }
+              .D {
+                margin-left: 0.2rem;
+                margin-right: 0.2rem;
+                color: #d0021b;
+              }
+              .A {
+                margin-left: 0.2rem;
+                color: #948e8d;
+              }
+            }
+
+            .KDAScoreContainer {
+              font-size: 11px;
+              font-weight: bold;
+
+              .KDAScore {
+                font-family: Helvetica;
+                color: #333333;
+              }
+
+              .KDAScoreSuffix {
+                padding-left: 0.2rem;
+                color: #555e5e;
+              }
+            }
+
+            .Badges {
+              display: flex;
+              gap: 0.2rem;
+              .Badge {
+                padding: 4px;
+                border-radius: 10px;
+                color: white;
+                font-size: 10px;
+                font-family: Helvetica;
+
+                &.kill {
+                  background-color: #ec4f48;
+                }
+
+                &.ace {
+                  background-color: #8c51c5;
+                }
+              }
+            }
+          }
+
+          .GR4 {
+            flex: 2;
+            // background-color: mediumpurple;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 11px;
+            gap: 0.4rem;
+            padding-top: 0.8rem;
+            color: #555e5e;
+            font-family: Helvetica;
+
+            .PKill {
+              color: #d0021b;
+            }
+          }
+
+          .GR5 {
+            width: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+
+            .Items {
+              display: grid;
+              grid-template-columns: 20px 20px 20px 20px;
+              gap: 0.2rem;
+              
+              img.Item {
+                display: block;
+                width: 20px;
+                height: 20px;
+                object-fit:fill;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.1);
+              }
+            }
+
+            .ControlWardCount {
+              display: flex;
+              font-family: Helvetica;
+              font-size: 11px;
+              color: black;
+              align-items: center;
+              margin-top: 0.2rem;
+
+              img.ControlWard {
+                display: inline;
+                width: 13px;
+                object-fit: fill;
+                margin-right: 3px;
+              }
+            }
+          }
+
+          .GR6 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 160px;
+
+            .Team1 {
+              display: grid;
+              grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+              width: 80px;
+              height: 100%;
+
+              .Player {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                img.Champion {
+                  display: inline;
+                  width: 18px;
+                  height: 18px;
+                  object-fit: fill;
+                }
+
+                .SummonerName {
+                  @include lineLimit(1);
+                  font-family: Helvetica;
+                  font-size: 11px;
+                  color: #555555;
+                }
+              }
+            }
+
+            .Team2 {
+              display: grid;
+              grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+              width: 80px;
+              height: 100%;
+
+              .Player {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                img.Champion {
+                  display: inline;
+                  width: 18px;
+                  height: 18px;
+                  object-fit: fill;
+                }
+
+                .SummonerName {
+                  @include lineLimit(1);
+                  width: 60px;
+                  font-family: Helvetica;
+                  font-size: 11px;
+                  color: #555555;
+                }
+              }
+            }
+          }
         }
       }
     }

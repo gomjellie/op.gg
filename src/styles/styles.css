@@ -836,7 +836,392 @@
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord {
   border: 1px solid #cdd2d2;
-  height: 98px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 100px;
+  width: 100%;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord.defeat {
+  background-color: #d6b5b2;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord.victory {
+  background-color: #b0ceea;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 {
+  width: 70px;
+  color: #555555;
+  font-size: 11px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 .GameType {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 .Divider {
+  position: relative;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  left: 25%;
+  width: 40%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 .Outcome {
+  margin-bottom: 2px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 .Outcome.victory {
+  color: #2c709b;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 .Outcome.defeat {
+  color: #d0021b;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 .ChampVisuals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  gap: 4px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 .ChampVisuals img.ChampAvatar {
+  display: block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 .ChampVisuals .Spells {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 .ChampVisuals .Spells img.Spell {
+  display: block;
+  width: 20px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 .ChampVisuals .Runes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 .ChampVisuals .Runes img.Rune {
+  display: block;
+  width: 20px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 .ChampName {
+  color: #555555;
+  font-size: 11px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.3rem;
+  font-size: 12px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .KDASeperated {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 15px;
+  color: #948e8d;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .KDASeperated .K {
+  color: #948e8d;
+  margin-right: 0.2rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .KDASeperated .D {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  color: #d0021b;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .KDASeperated .A {
+  margin-left: 0.2rem;
+  color: #948e8d;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .KDAScoreContainer {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .KDAScoreContainer .KDAScore {
+  font-family: Helvetica;
+  color: #333333;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .KDAScoreContainer .KDAScoreSuffix {
+  padding-left: 0.2rem;
+  color: #555e5e;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .Badges {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .Badges .Badge {
+  padding: 4px;
+  border-radius: 10px;
+  color: white;
+  font-size: 10px;
+  font-family: Helvetica;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .Badges .Badge.kill {
+  background-color: #ec4f48;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 .Badges .Badge.ace {
+  background-color: #8c51c5;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR4 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 11px;
+  gap: 0.4rem;
+  padding-top: 0.8rem;
+  color: #555e5e;
+  font-family: Helvetica;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR4 .PKill {
+  color: #d0021b;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR5 {
+  width: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR5 .Items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20px 20px 20px 20px;
+      grid-template-columns: 20px 20px 20px 20px;
+  gap: 0.2rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR5 .Items img.Item {
+  display: block;
+  width: 20px;
+  height: 20px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR5 .ControlWardCount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Helvetica;
+  font-size: 11px;
+  color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.2rem;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR5 .ControlWardCount img.ControlWard {
+  display: inline;
+  width: 13px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  margin-right: 3px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 160px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 80px;
+  height: 100%;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team1 .Player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team1 .Player img.Champion {
+  display: inline;
+  width: 18px;
+  height: 18px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team1 .Player .SummonerName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-family: Helvetica;
+  font-size: 11px;
+  color: #555555;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 80px;
+  height: 100%;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team2 .Player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team2 .Player img.Champion {
+  display: inline;
+  width: 18px;
+  height: 18px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team2 .Player .SummonerName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 60px;
+  font-family: Helvetica;
+  font-size: 11px;
+  color: #555555;
 }
 
 html {

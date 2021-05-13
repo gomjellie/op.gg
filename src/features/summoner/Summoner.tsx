@@ -1,6 +1,7 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import OverView from "./OverView";
+import GameRecord from "./GameRecord";
 import GGSvg from "../../assets/GG.svg";
 import AvatarImg from "../../assets/avatar.jpg";
 import GoldBracket from "../../assets/gold.png";
@@ -110,10 +111,11 @@ const Summoner = ({ match }: RouteComponentProps<MatchParams>) => {
           </div>
           <OverView />
           <div className="GameRecords">
-            <div className="GameRecord"></div>
-            <div className="GameRecord"></div>
-            <div className="GameRecord"></div>
-            <div className="GameRecord"></div>
+            <GameRecord />
+            <GameRecord />
+            <GameRecord />
+            <GameRecord />
+            <GameRecord />
           </div>
         </div>
       </main>
