@@ -2,6 +2,8 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 import ZyraImg from "../../assets/champs/Zyra.png";
 import LuluImg from "../../assets/champs/Lulu.png";
+import SupImg from "../../assets/mostpositions/sup.png";
+import AdcImg from "../../assets/mostpositions/adc.png";
 
 const chartData = {
   datasets: [
@@ -60,7 +62,31 @@ const OverView: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="MostPositionWinRate"></div>
+      <div className="PreferredPosition">
+        <div className="Title">Preferred Position(Rank)</div>
+        <div className="LaneInfo">
+          <img className="LaneIcon" src={SupImg} alt="Sup" />
+          <div className="Right">
+            <div className="Up">Support</div>
+            <div className="Down">
+              <span className="PickRatio">95%</span>
+              <span className="WRPrefix">Win Ratio</span>
+              <span className="WinRatio">47%</span>
+            </div>
+          </div>
+        </div>
+        <div className="LaneInfo">
+          <img className="LaneIcon" src={AdcImg} alt="Sup" />
+          <div className="Right">
+            <div className="Up">ADC</div>
+            <div className="Down">
+              <span className="PickRatio">5%</span>
+              <span className="WRPrefix">Win Ratio</span>
+              <span className="WinRatio">100%</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

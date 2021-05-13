@@ -244,20 +244,21 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 170px;
+        height: 160px;
         margin-bottom: $defaultMargin;
 
         .OveralWinRate {
           display: flex;
           flex-direction: row;
-          width: 300px;
+          flex: 3.5;
           border-right: 1px solid #cdd2d2;
+          padding-left: $defaultMargin;
 
           .Left {
             display: flex;
             flex-direction: column;
             height: 100%;
-            width: 140px;
+            width: 120px;
             align-items: center;
             gap: 0.2rem;
 
@@ -269,8 +270,7 @@
             }
 
             .ChartContainer {
-              // width: 150px;
-              width: 120px;
+              width: 100px;
               object-fit: scale-down;
 
               .CurrentWinRatio {
@@ -278,12 +278,14 @@
                 position: relative;
                 align-items: center;
                 justify-content: center;
-                left: 22px;
-                top: -93px;
-                width: 76px;
-                height: 76px;
+                left: 17px;
+                top: -78px;
+                width: 66px;
+                height: 66px;
                 background-color: $bgGray;
                 border-radius: 50%;
+                color: #666666;
+                font-size: 13px;
               }
             }
           }
@@ -294,7 +296,6 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-            width: 160px;
             gap: 0.8rem;
 
             .AverageKDAs {
@@ -350,9 +351,9 @@
 
         .MostChampWinRatios {
           display: flex;
+          flex: 3.5;
           flex-direction: column;
           justify-content: space-evenly;
-          width: 250px;
           border-right: 1px solid #cdd2d2;
 
           .MostChampWinRatio {
@@ -402,7 +403,8 @@
                 }
 
                 .KDA {
-                  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue', sans-serif;
+                  font-family: -apple-system, BlinkMacSystemFont, "Open Sans",
+                    "Helvetica Neue", sans-serif;
                   font-weight: bold;
                   margin-left: 0.5rem;
 
@@ -416,7 +418,63 @@
         }
 
         .PreferredPosition {
-          flex: 1;
+          flex: 3;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          color: #666666;
+          padding-left: 1rem;
+          padding-top: 1rem;
+
+          .Title {
+            font-family: "NanumBarunGothic", "Gothic";
+            font-size: 12px;
+            margin-bottom: $defaultMargin;
+          }
+
+          .LaneInfo {
+            display: flex;
+            height: 60px;
+            width: 100%;
+            gap: 0.5rem;
+            img.LaneIcon {
+              display: block;
+              width: 30px;
+              object-fit: scale-down;
+            }
+
+            .Right {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding-top: 0.3rem;
+              padding-bottom: 0.3rem;
+              justify-content: space-evenly;
+              .Up {
+                font-family: NanumBarunGothic;
+                font-size: 14px;
+              }
+              .Down {
+                font-family: Helvetica;
+                font-size: 11px;
+                .PickRatio {
+                  color: #1f8ecd;
+                  padding-right: 0.5rem;
+                  border-right: 1px solid #cdd2d2;
+                }
+
+                .WRPrefix {
+                  padding-left: 0.5rem;
+                }
+
+                .WinRatio {
+                  padding-left: 0.3rem;
+                  font-weight: bold;
+                  color: #333333;
+                }
+              }
+            }
+          }
         }
       }
 

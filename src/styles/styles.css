@@ -508,7 +508,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
-  height: 170px;
+  height: 160px;
   margin-bottom: 0.8rem;
 }
 
@@ -520,8 +520,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 300px;
+  -webkit-box-flex: 3.5;
+      -ms-flex: 3.5;
+          flex: 3.5;
   border-right: 1px solid #cdd2d2;
+  padding-left: 0.8rem;
 }
 
 .Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Left {
@@ -533,7 +536,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  width: 140px;
+  width: 120px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -548,7 +551,7 @@
 }
 
 .Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Left .ChartContainer {
-  width: 120px;
+  width: 100px;
   -o-object-fit: scale-down;
      object-fit: scale-down;
 }
@@ -564,12 +567,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  left: 22px;
-  top: -93px;
-  width: 76px;
-  height: 76px;
+  left: 17px;
+  top: -78px;
+  width: 66px;
+  height: 66px;
   background-color: #eaeaea;
   border-radius: 50%;
+  color: #666666;
+  font-size: 13px;
 }
 
 .Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right {
@@ -587,7 +592,6 @@
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  width: 160px;
   gap: 0.8rem;
 }
 
@@ -643,6 +647,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 3.5;
+      -ms-flex: 3.5;
+          flex: 3.5;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -650,7 +657,6 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 250px;
   border-right: 1px solid #cdd2d2;
 }
 
@@ -722,7 +728,7 @@
 }
 
 .Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down .KDA {
-  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
   margin-left: 0.5rem;
 }
@@ -732,9 +738,88 @@
 }
 
 .Summoner main.SummonerBody .RealContent .Overview .PreferredPosition {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: #666666;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .Title {
+  font-family: "NanumBarunGothic", "Gothic";
+  font-size: 12px;
+  margin-bottom: 0.8rem;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo img.LaneIcon {
+  display: block;
+  width: 30px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Up {
+  font-family: NanumBarunGothic;
+  font-size: 14px;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down {
+  font-family: Helvetica;
+  font-size: 11px;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down .PickRatio {
+  color: #1f8ecd;
+  padding-right: 0.5rem;
+  border-right: 1px solid #cdd2d2;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down .WRPrefix {
+  padding-left: 0.5rem;
+}
+
+.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down .WinRatio {
+  padding-left: 0.3rem;
+  font-weight: bold;
+  color: #333333;
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords {
