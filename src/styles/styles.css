@@ -539,7 +539,7 @@
   border-bottom: 2px solid #1ea1f7;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview {
+.Summoner main.SummonerBody .RealContent .Summary {
   border: 1px solid #cdd2d2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -553,7 +553,7 @@
   margin-bottom: 0.8rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -568,7 +568,7 @@
   padding-left: 0.8rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Left {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -584,20 +584,20 @@
   gap: 0.2rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Left .CurrentTwentyGames {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Left .CurrentTwentyGames {
   font-family: Helvetica;
   font-size: 12px;
   color: #666666;
   margin-top: 0.8rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Left .ChartContainer {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Left .ChartContainer {
   width: 100px;
   -o-object-fit: scale-down;
      object-fit: scale-down;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Left .ChartContainer .CurrentWinRatio {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Left .ChartContainer .CurrentWinRatio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -618,7 +618,7 @@
   font-size: 13px;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -636,7 +636,7 @@
   gap: 0.8rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .AverageKDAs {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .AverageKDAs {
   display: inline;
   font-size: 11px;
   font-family: Helvetica;
@@ -644,47 +644,47 @@
   color: #333333;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .AverageKDAs .AverageKill {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .AverageKDAs .AverageKill {
   display: inline;
   margin: 0px 4px;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .AverageKDAs .AverageDeath {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .AverageKDAs .AverageDeath {
   display: inline;
   margin: 0px 4px;
   color: #c6443e;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .AverageKDAs .AverageAssist {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .AverageKDAs .AverageAssist {
   display: inline;
   margin: 0px 4px;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .Avg {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .Avg {
   display: inline;
   font-family: Helvetica;
   font-size: 16px;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .Avg .KDARatio {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .Avg .KDARatio {
   display: inline;
   margin: 0px 4px;
   font-weight: bold;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .Avg .KDARatio.green {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .Avg .KDARatio.green {
   color: #2daf7f;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .Avg .WinRatio {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .Avg .WinRatio {
   display: inline;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .OveralWinRate .Right .Avg .WinRatio.red {
+.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .Avg .WinRatio.red {
   color: #c6443e;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -701,7 +701,7 @@
   border-right: 1px solid #cdd2d2;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -713,7 +713,7 @@
   height: 30px;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .ChampAvatar {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .ChampAvatar {
   display: block;
   width: 30px;
   border-radius: 15px;
@@ -721,7 +721,7 @@
      object-fit: scale-down;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -739,46 +739,46 @@
   font-family: Helvetica;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Up {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Up {
   font-size: 14px;
   color: #333333;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down {
   font-family: Helvetica;
   font-size: 11px;
   color: #555555;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio {
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio.black {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio.black {
   color: #333333;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio.red {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio.red {
   color: #c6443e;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinLoose {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinLoose {
   padding-right: 0.5rem;
   border-right: 1px solid #cdd2d2;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down .KDA {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .KDA {
   font-family: -apple-system, BlinkMacSystemFont, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
   margin-left: 0.5rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .MostChampWinRatios .MostChampWinRatio .RContainer .Down .KDA.gold {
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .KDA.gold {
   color: #e19205;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
@@ -797,13 +797,13 @@
   padding-top: 1rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .Title {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .Title {
   font-family: "NanumBarunGothic", "Gothic";
   font-size: 12px;
   margin-bottom: 0.8rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -812,14 +812,14 @@
   gap: 0.5rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo img.LaneIcon {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo img.LaneIcon {
   display: block;
   width: 30px;
   -o-object-fit: scale-down;
      object-fit: scale-down;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo .Right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -837,27 +837,27 @@
           justify-content: space-evenly;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Up {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo .Right .Up {
   font-family: NanumBarunGothic;
   font-size: 14px;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo .Right .Down {
   font-family: Helvetica;
   font-size: 11px;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down .PickRatio {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo .Right .Down .PickRatio {
   color: #1f8ecd;
   padding-right: 0.5rem;
   border-right: 1px solid #cdd2d2;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down .WRPrefix {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo .Right .Down .WRPrefix {
   padding-left: 0.5rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Overview .PreferredPosition .LaneInfo .Right .Down .WinRatio {
+.Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .LaneInfo .Right .Down .WinRatio {
   padding-left: 0.3rem;
   font-weight: bold;
   color: #333333;
