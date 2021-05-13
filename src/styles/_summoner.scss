@@ -689,6 +689,15 @@
                 border-radius: 5px;
                 background-color: rgba(0, 0, 0, 0.1);
               }
+
+              div.Item {
+                display: block;
+                width: 20px;
+                height: 20px;
+                object-fit:fill;
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.1);
+              }
             }
 
             .ControlWardCount {

@@ -1118,6 +1118,16 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR5 .Items div.Item {
+  display: block;
+  width: 20px;
+  height: 20px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR5 .ControlWardCount {
   display: -webkit-box;
   display: -ms-flexbox;

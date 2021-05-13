@@ -64,13 +64,13 @@ const GameRecord: React.FC = () => {
       </div>
       <div className="GR5">
         <div className="Items">
-          <img className="Item" src={LiandryIcon} alt="Item" />
-          <img className="Item" alt="Item" />
-          <img className="Item" alt="Item" />
-          <img className="Item" alt="WardItem" />
-          <img className="Item" alt="Item" />
-          <img className="Item" alt="Item" />
-          <img className="Item" alt="Item" />
+          <img className="Item" src={LiandryIcon} alt="" />
+          <div className="Item" />
+          <div className="Item" />
+          <div className="Item" />
+          <div className="Item" />
+          <div className="Item" />
+          <div className="Item" />
           <img className="Item" src={BuildIcon} alt="Build" />
         </div>
         <div className="ControlWardCount">
