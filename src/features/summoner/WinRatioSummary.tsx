@@ -38,10 +38,10 @@ const WinRatioSummary: React.FC = () => {
             </div>
             <div className="WinLose">
               <div className="Win" style={{ flex: item.wins }}>
-                {item.wins}승
+                {item.wins}W
               </div>
               <div className="Loss" style={{ flex: item.losses }}>
-                {item.losses}패
+                {item.losses}L
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@ const WinRatioSummary: React.FC = () => {
             </div>
             <div className="TDContainer2">
               <div className="Top2">
-                {toFloatPrecision(kills + assists, deaths)}:1 평점
+                {toFloatPrecision(kills + assists, deaths)}:1 KDA
               </div>
               <div className="Down2">
                 {toFloatPrecision(kills, games)} /{" "}
@@ -79,7 +79,7 @@ const WinRatioSummary: React.FC = () => {
               <div className="Top3">
                 {toFloatPrecision(wins * 100, games, 0)}%
               </div>
-              <div className="Down3">{games}게임</div>
+              <div className="Down3">{games} Played</div>
             </div>
           </div>
         );
