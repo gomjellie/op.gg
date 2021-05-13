@@ -35,7 +35,7 @@
           justify-content: center;
           align-items: center;
           object-fit: scale-down;
-          
+
           img.RankIcon {
             height: 104px;
             width: 104px;
@@ -120,7 +120,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            
+
             &.Selected {
               background-color: #ededed;
             }
@@ -244,39 +244,179 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 198px;
+        height: 170px;
         margin-bottom: $defaultMargin;
 
         .OveralWinRate {
           display: flex;
           flex-direction: row;
           width: 300px;
-          
+          border-right: 1px solid #cdd2d2;
+
           .Left {
             display: flex;
             flex-direction: column;
             height: 100%;
             width: 140px;
             align-items: center;
-            background-color: lightcyan;
+            gap: 0.2rem;
 
+            .CurrentTwentyGames {
+              font-family: Helvetica;
+              font-size: 12px;
+              color: #666666;
+              margin-top: $defaultMargin;
+            }
+
+            .ChartContainer {
+              // width: 150px;
+              width: 120px;
+              object-fit: scale-down;
+
+              .CurrentWinRatio {
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                left: 22px;
+                top: -93px;
+                width: 76px;
+                height: 76px;
+                background-color: $bgGray;
+                border-radius: 50%;
+              }
+            }
           }
 
           .Right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             height: 100%;
             width: 160px;
-            background-color: lightsteelblue;
+            gap: 0.8rem;
+
+            .AverageKDAs {
+              display: inline;
+              font-size: 11px;
+              font-family: Helvetica;
+              font-weight: bold;
+              color: #333333;
+
+              .AverageKill {
+                display: inline;
+                margin: 0px 4px;
+              }
+
+              .AverageDeath {
+                display: inline;
+                margin: 0px 4px;
+                color: #c6443e;
+              }
+
+              .AverageAssist {
+                display: inline;
+                margin: 0px 4px;
+              }
+            }
+
+            .Avg {
+              display: inline;
+              font-family: Helvetica;
+              font-size: 16px;
+
+              .KDARatio {
+                display: inline;
+                margin: 0px 4px;
+
+                font-weight: bold;
+
+                &.green {
+                  color: #2daf7f;
+                }
+              }
+
+              .WinRatio {
+                display: inline;
+
+                &.red {
+                  color: #c6443e;
+                }
+              }
+            }
           }
         }
 
-        .MostChampWinRate {
+        .MostChampWinRatios {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
           width: 250px;
-          background-color: lightgreen;
+          border-right: 1px solid #cdd2d2;
+
+          .MostChampWinRatio {
+            display: flex;
+            flex-direction: row;
+            padding-left: 1rem;
+            height: 30px;
+            .ChampAvatar {
+              display: block;
+              width: 30px;
+              border-radius: 15px;
+              object-fit: scale-down;
+            }
+
+            .RContainer {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: space-evenly;
+              margin-left: $defaultMargin;
+              font-family: Helvetica;
+
+              .Up {
+                font-size: 14px;
+                color: #333333;
+              }
+              .Down {
+                font-family: Helvetica;
+                font-size: 11px;
+                color: #555555;
+
+                .WinRatio {
+                  font-weight: bold;
+                  margin-right: 0.5rem;
+                  &.black {
+                    color: #333333;
+                  }
+
+                  &.red {
+                    color: #c6443e;
+                  }
+                }
+
+                .WinLoose {
+                  padding-right: 0.5rem;
+                  border-right: 1px solid #cdd2d2;
+                }
+
+                .KDA {
+                  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue', sans-serif;
+                  font-weight: bold;
+                  margin-left: 0.5rem;
+
+                  &.gold {
+                    color: #e19205;
+                  }
+                }
+              }
+            }
+          }
         }
 
-        .MostPositionWinRate {
-          flex: 2;
-          background-color: lightpink;
+        .PreferredPosition {
+          flex: 1;
         }
       }
 
