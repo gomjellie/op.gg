@@ -291,13 +291,13 @@
   color: #879292;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox {
   border: 1px solid #cdd2d2;
   border-bottom: none;
   width: 100%;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .LRContainer {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .LRContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,7 +314,7 @@
   background-color: #cdd2d2;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .LRContainer .ChampsWinRateButton {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .LRContainer .ChampsWinRateButton {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -330,16 +330,16 @@
   cursor: pointer;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .LRContainer .ChampsWinRateButton.Selected {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .LRContainer .ChampsWinRateButton.Selected {
   background-color: #ededed;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .LRContainer .ChampsWinRateButton:not(.Selected) {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .LRContainer .ChampsWinRateButton:not(.Selected) {
   background-color: #f2f2f2;
   border-bottom: 1px solid #cdd2d2;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,14 +355,55 @@
   gap: 0.8rem;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem img.ChampAvatar {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem img.ChampAvatar {
   margin-left: 0.8rem;
   height: 40px;
   width: 40px;
   border-radius: 50%;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer1 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .ChampName {
+  color: #5e5e5e;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .WinRatio {
+  color: #5e5e5e;
+  font-size: 12px;
+}
+
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .WinLose {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .WinLose .Win {
+  background-color: #1f8ecd;
+  color: white;
+  font-size: 12px;
+  padding: 4px 0px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .WinLose .Loss {
+  background-color: #ee5a52;
+  color: white;
+  font-size: 12px;
+  padding: 4px 0px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer1 {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
@@ -378,20 +419,20 @@
           align-items: flex-start;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer1 .Top1 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer1 .Top1 {
   font-size: 13px;
   font-weight: bold;
   font-family: Helvetica;
   color: #5e5e5e;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer1 .Down1 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer1 .Down1 {
   font-family: Helvetica;
   font-size: 11px;
   color: #879292;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer2 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer2 {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
@@ -407,20 +448,20 @@
           align-items: center;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer2 .Top2 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer2 .Top2 {
   font-family: Helvetica;
   font-size: 13px;
   font-weight: bold;
   color: #5e5e5e;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer2 .Down2 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer2 .Down2 {
   font-family: Helvetica;
   font-size: 11px;
   color: #879292;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer3 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer3 {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
@@ -436,14 +477,14 @@
           align-items: center;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer3 .Top3 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer3 .Top3 {
   font-family: Helvetica;
   font-size: 13px;
   font-weight: bold;
   color: #5e5e5e;
 }
 
-.Summoner main.SummonerBody .SideContent .ChampsWinRateBox .WinRateItem .TDContainer3 .Down3 {
+.Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer3 .Down3 {
   font-family: Helvetica;
   font-size: 11px;
   color: #879292;

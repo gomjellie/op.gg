@@ -98,7 +98,7 @@
         }
       }
 
-      .ChampsWinRateBox {
+      .ChampsWinRatioBox {
         @include useDefaultBorder();
         border-bottom: none;
         width: 100%;
@@ -132,10 +132,9 @@
           }
         }
 
-        .WinRateItem {
+        .ChampWinRatioItem {
           display: flex;
           flex-direction: row;
-          // justify-content: space-evenly;
           align-items: center;
           border-bottom: 1px solid $borderGray;
           height: 53px;
@@ -146,6 +145,40 @@
             height: 40px;
             width: 40px;
             border-radius: 50%;
+          }
+
+          .ChampName {
+            color: #5e5e5e;
+            font-size: 12px;
+            margin-right: 20px;
+          }
+          
+          .WinRatio {
+            color: #5e5e5e;
+            font-size: 12px;
+          }
+
+          .WinLose {
+            display: flex;
+            flex-direction: row;
+            width: 100px;
+            align-items: flex-end;
+            
+            .Win {
+              background-color: #1f8ecd;
+              color: white;
+              font-size: 12px;
+              padding: 4px 0px;
+              border-radius: 5px 0px 0px 5px;
+            }
+
+            .Loss {
+              background-color: #ee5a52;
+              color: white;
+              font-size: 12px;
+              padding: 4px 0px;
+              border-radius: 0px 5px 5px 0px;
+            }
           }
 
           .TDContainer1 {
