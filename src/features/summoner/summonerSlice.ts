@@ -4,8 +4,8 @@ import { RootState } from "../../app/store";
 
 type Status = "idle" | "loading" | "failed" | "succeeded";
 
-const initialState: { model: Summoner; status: Status } = {
-  model: exampleSummoner,
+const initialState: { model?: Summoner; status: Status } = {
+  model: undefined,
   status: "idle",
 };
 
@@ -17,7 +17,7 @@ export const fetchSummoner = createAsyncThunk(
         `https://codingtest.op.gg/api/summoner/${summonerName}?hl=en`
       ).then((res) => res.json());
 
-      return (response as any).summoner;
+      return (response as ({summoner: Summoner})).summoner;
     } catch {
       return exampleSummoner;
     }
@@ -47,6 +47,6 @@ export const selectSummoner = (state: RootState) => state.summoner.model;
 export const selectSummonerStatus = (state: RootState) => state.summoner.status;
 
 export const selectPreviousTiers = (state: RootState) =>
-  state.summoner.model.previousTiers
+  state.summoner.model?.previousTiers
     .slice()
     .sort((t1, t2) => t1.season - t2.season);

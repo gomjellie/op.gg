@@ -6,10 +6,14 @@ const QuickLook: React.FC = () => {
   const summoner = useSelector(selectSummoner);
   const previousTiers = useSelector(selectPreviousTiers);
 
+  if (summoner === undefined) {
+    return <div className="QuickLook" />
+  }
+
   return (
     <div className="QuickLook">
       <div className="Seasons">
-        {previousTiers.map((prevTier) => (
+        {previousTiers?.map((prevTier) => (
           <div className="SeasonBadge" key={`SeasonBadge_${prevTier.season}`}>
             S{prevTier.season} {prevTier.tier}
           </div>

@@ -9,7 +9,7 @@ interface Props {
 
 const RankGameOverView: React.FC<Props> = ({ rankType }) => {
   const summoner = useSelector(selectSummoner);
-  const league = summoner.leagues.filter((league) => {
+  const league = summoner?.leagues.filter((league) => {
     if (!league.hasResults) return false;
     return league.tierRank.name === rankType;
   })?.[0];
