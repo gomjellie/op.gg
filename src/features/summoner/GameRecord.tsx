@@ -40,7 +40,7 @@ const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
           <PlayerStick
             imageUrl={player.champion.imageUrl}
             summonerName={player.summonerName}
-            key={`PlayerStick_${player.summonerName}_${idx}`}
+            key={`Game_${game.gameId}PlayerStick_${player.summonerName}_${idx}`}
           />
         ))}
       </span>
@@ -49,7 +49,7 @@ const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
           <PlayerStick
             imageUrl={player.champion.imageUrl}
             summonerName={player.summonerName}
-            key={`PlayerStick_${player.summonerName}_${idx}`}
+            key={`Game_${game.gameId}PlayerStick_${player.summonerName}_${idx}`}
           />
         ))}
       </span>
@@ -138,12 +138,9 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
             { imageUrl: null },
           ]
             .slice(0, 7)
-            .map((item) => {
-              /**
-               * TODO: make unique Key id
-               */
-              if (item.imageUrl === null) return <div className="Item" />;
-              return <img className="Item" src={item.imageUrl} alt="" />;
+            .map((item, idx) => {
+              if (item.imageUrl === null) return <div className="Item" key={`Game_${game.gameId}_Item_Empty_${idx}`}/>;
+              return <img className="Item" src={item.imageUrl} alt="" key={`Game_${game.gameId}_Item_${item.imageUrl}_${idx}`} />;
             })}
           <img className="Item" src={BuildIcon} alt="Build" />
         </div>
