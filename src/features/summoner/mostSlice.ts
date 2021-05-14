@@ -6,7 +6,6 @@ type MostType = "Champion Win Ratio" | "Rank win rate per week";
 
 type Status = "idle" | "loading" | "failed" | "succeeded";
 
-
 const initialState: { model?: Most; status: Status; mostType: MostType } = {
   model: undefined,
   status: "idle",
@@ -21,7 +20,7 @@ export const fetchMost = createAsyncThunk(
         `https://codingtest.op.gg/api/summoner/${summonerName}/mostInfo?hl=en`
       ).then((res) => res.json());
 
-      return (response as Most);
+      return response as Most;
     } catch {
       return exampleMost;
     }
@@ -50,9 +49,11 @@ const mostSlice = createSlice({
 
 export default mostSlice.reducer;
 
-export const selectMostChampions = (state: RootState) => state.most.model?.champions;
+export const selectMostChampions = (state: RootState) =>
+  state.most.model?.champions;
 
-export const selectMostRecents = (state: RootState) => state.most.model?.recentWinRate;
+export const selectMostRecents = (state: RootState) =>
+  state.most.model?.recentWinRate;
 
 export const selectMostType = (state: RootState) => state.most.mostType;
 

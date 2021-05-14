@@ -17,7 +17,7 @@ export const fetchSummoner = createAsyncThunk(
         `https://codingtest.op.gg/api/summoner/${summonerName}?hl=en`
       ).then((res) => res.json());
 
-      return (response as ({summoner: Summoner})).summoner;
+      return (response as { summoner: Summoner }).summoner;
     } catch {
       return exampleSummoner;
     }
