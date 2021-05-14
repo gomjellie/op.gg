@@ -7,7 +7,12 @@ import GameRecordList from "./GameRecordList";
 import RankGameOverView from "./RankGameOverView";
 import WinRatioSummary from "./WinRatioSummary";
 import { useSelector, useDispatch } from "react-redux";
-import { selectGameType, switchGameType } from "./matchesSlice";
+import {
+  fetchMatches,
+  selectGameType,
+  selectMatchesStatus,
+  switchGameType,
+} from "./matchesSlice";
 import { fetchSummoner, selectSummonerStatus } from "./summonerSlice";
 import { fetchMost, selectMostStatus } from "./mostSlice";
 
@@ -21,6 +26,7 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
   const dispatch = useDispatch();
   const summonerStatus = useSelector(selectSummonerStatus);
   const mostStatus = useSelector(selectMostStatus);
+  const matchesStatus = useSelector(selectMatchesStatus);
 
   useEffect(() => {
     if (summonerStatus === "idle") {
@@ -33,6 +39,12 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
       dispatch(fetchMost(userName));
     }
   }, [mostStatus, userName, dispatch]);
+
+  useEffect(() => {
+    if (matchesStatus === "idle") {
+      dispatch(fetchMatches(userName));
+    }
+  }, [matchesStatus, userName, dispatch]);
 
   return (
     <div className="Summoner">

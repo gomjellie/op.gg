@@ -18,8 +18,7 @@ const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
 };
 
 const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
-  const [matchDetails, setMatchDetails] =
-    useState<MatchDetails>();
+  const [matchDetails, setMatchDetails] = useState<MatchDetails>();
 
   useEffect(() => {
     fetch(
@@ -30,7 +29,7 @@ const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
   }, [game]);
 
   if (matchDetails === undefined) {
-    return <div className="GR6"></div>
+    return <div className="GR6"></div>;
   }
 
   return (
@@ -69,7 +68,8 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
       <div className="GR1">
         <div className="GameType">{game.gameType}</div>
         <div className="TimeAgo">
-          {-fp(game.createDate, 60 * 24, 0)} days ago
+          N days ago
+          {/* {fp(game.createDate, 60 * 24 * 10000, 0)} days ago */}
         </div>
         <div className="Divider"></div>
         <div className={`Outcome ${vd}`}>{vd}</div>
@@ -139,8 +139,21 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
           ]
             .slice(0, 7)
             .map((item, idx) => {
-              if (item.imageUrl === null) return <div className="Item" key={`Game_${game.gameId}_Item_Empty_${idx}`}/>;
-              return <img className="Item" src={item.imageUrl} alt="" key={`Game_${game.gameId}_Item_${item.imageUrl}_${idx}`} />;
+              if (item.imageUrl === null)
+                return (
+                  <div
+                    className="Item"
+                    key={`Game_${game.gameId}_Item_Empty_${idx}`}
+                  />
+                );
+              return (
+                <img
+                  className="Item"
+                  src={item.imageUrl}
+                  alt=""
+                  key={`Game_${game.gameId}_Item_${item.imageUrl}_${idx}`}
+                />
+              );
             })}
           <img className="Item" src={BuildIcon} alt="Build" />
         </div>

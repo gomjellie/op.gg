@@ -25,7 +25,7 @@ const OverView: React.FC = () => {
     return {
       datasets: [
         {
-          data: [summary.wins, summary.losses],
+          data: [summary!.wins, summary!.losses],
           backgroundColor: ["#ee5a52", "#1f8ecd"],
           borderWidth: 0,
         },
@@ -39,6 +39,14 @@ const OverView: React.FC = () => {
     if (position === "MID") return MidImg;
     if (position === "SUP") return SupImg;
     if (position === "TOP") return TopImg;
+  };
+
+  if (
+    summary === undefined ||
+    champions === undefined ||
+    positions === undefined
+  ) {
+    return <div className="Summary" />;
   }
 
   return (
@@ -114,7 +122,11 @@ const OverView: React.FC = () => {
           return (
             /* Key 안전하지 않을 수 있음 */
             <div className="LaneInfo" key={`LaneInfo_${position.position}`}>
-              <img className="LaneIcon" src={positionImgFactory(position.position as Position)} alt="Sup" />
+              <img
+                className="LaneIcon"
+                src={positionImgFactory(position.position as Position)}
+                alt="Sup"
+              />
               <div className="Right">
                 <div className="Up">{position.positionName}</div>
                 <div className="Down">

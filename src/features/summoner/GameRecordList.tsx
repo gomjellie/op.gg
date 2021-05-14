@@ -7,6 +7,10 @@ const GameRecordList: React.FC = () => {
   const gameType = useSelector(selectGameType);
   const games = useSelector(selectGames);
 
+  if (games === undefined) {
+    return <div className="GameRecords" />;
+  }
+
   const selectedGames = games.filter((game) => {
     if (gameType === "Total") return true;
     if (gameType === "Ranked Flex") {
