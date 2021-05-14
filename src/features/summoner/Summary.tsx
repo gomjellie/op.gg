@@ -25,7 +25,7 @@ const OverView: React.FC = () => {
     return {
       datasets: [
         {
-          data: [summary!.wins, summary!.losses],
+          data: [summary!.losses, summary!.wins],
           backgroundColor: ["#ee5a52", "#1f8ecd"],
           borderWidth: 0,
         },
