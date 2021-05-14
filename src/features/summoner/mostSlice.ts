@@ -50,10 +50,10 @@ const mostSlice = createSlice({
 export default mostSlice.reducer;
 
 export const selectMostChampions = (state: RootState) =>
-  state.most.model?.champions;
+  state.most.model?.champions.slice().sort((c1, c2) => c2.games - c1.games);
 
 export const selectMostRecents = (state: RootState) =>
-  state.most.model?.recentWinRate;
+  state.most.model?.recentWinRate.slice().sort((c1, c2) => (c2.wins + c2.losses) - (c1.wins + c1.losses));
 
 export const selectMostType = (state: RootState) => state.most.mostType;
 
