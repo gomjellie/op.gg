@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RedWardIcon from "../../assets/wards/red.png";
 import BuildIcon from "../../assets/buildred.png";
 import { Game } from "./t.matches";
 import { toFloatPrecision as fp } from "../../utils/numbers";
+import MatchDetails from "./t.matchDetails";
 
 const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   imageUrl,
@@ -12,6 +13,46 @@ const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
     <div className="Player">
       <img className="Champion" src={imageUrl} alt="" />
       <span className="SummonerName">{summonerName}</span>
+    </div>
+  );
+};
+
+const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
+  const [matchDetails, setMatchDetails] =
+    useState<MatchDetails>();
+
+  useEffect(() => {
+    fetch(
+      `https://codingtest.op.gg/api/summoner/${game.summonerName}/matchDetail/${game.gameId}`
+    )
+      .then((res) => res.json())
+      .then((res) => setMatchDetails(res));
+  }, [game]);
+
+  if (matchDetails === undefined) {
+    return <div className="GR6"></div>
+  }
+
+  return (
+    <div className="GR6">
+      <span className="Team1">
+        {matchDetails.teams[0].players.map((player, idx) => (
+          <PlayerStick
+            imageUrl={player.champion.imageUrl}
+            summonerName={player.summonerName}
+            key={`PlayerStick_${player.summonerName}_${idx}`}
+          />
+        ))}
+      </span>
+      <span className="Team2">
+        {matchDetails.teams[1].players.map((player, idx) => (
+          <PlayerStick
+            imageUrl={player.champion.imageUrl}
+            summonerName={player.summonerName}
+            key={`PlayerStick_${player.summonerName}_${idx}`}
+          />
+        ))}
+      </span>
     </div>
   );
 };
@@ -111,52 +152,7 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
           Control Ward {game.stats.ward.visionWardsBought}
         </div>
       </div>
-      <div className="GR6">
-        <span className="Team1">
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Viktor.png"
-            summonerName="pythonic"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Viktor.png"
-            summonerName="HLE Viper"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Anivia.png"
-            summonerName="Babe G"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Viktor.png"
-            summonerName="쪼렙이다말로하자"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Jayce.png"
-            summonerName="SPG Zzus"
-          />
-        </span>
-        <span className="Team2">
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Tristana.png"
-            summonerName="asdf"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Jayce.png"
-            summonerName="zyzyzyzyzy"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Anivia.png"
-            summonerName="쭌 베"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Malzahar.png"
-            summonerName="SPG Zzus"
-          />
-          <PlayerStick
-            imageUrl="https://opgg-static.akamaized.net/images/lol/champion/Galio.png"
-            summonerName="loremipsumloremipsum"
-          />
-        </span>
-      </div>
+      <TeamLists game={game} />
     </div>
   );
 };
