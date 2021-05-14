@@ -18,7 +18,7 @@ const RankGameOverView: React.FC<Props> = ({ rankType }) => {
     return (
       <div className="RankGame">
         <div className="RankIconWrapper">
-          <img className="RankIcon" src={UnrankedIcon} alt="gold3" />
+          <img className="UnRanked" src={UnrankedIcon} alt="gold3" />
         </div>
         <div className="RankInfo">
           <div className="GameType">{rankType}</div>

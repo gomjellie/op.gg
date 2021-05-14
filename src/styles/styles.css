@@ -192,6 +192,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 140px;
   width: 100%;
   background-color: #f2f2f2;
 }
