@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Summoner, { exampleSummoner } from "./summoner.t";
+import Summoner, { exampleSummoner } from "./t.summoner";
 import { RootState } from "../../app/store";
 
 const initialState: { model: Summoner; status: string } = {

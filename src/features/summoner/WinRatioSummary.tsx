@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { exampleMost } from "./most.t";
+import { exampleMost } from "./t.most";
 import { toFloatPrecision } from "../../utils/numbers";
 
 type Tab = "Champion Win Ratio" | "Rank win rate per week";

@@ -1,7 +1,7 @@
 import React from "react";
 import RedWardIcon from "../../assets/wards/red.png";
 import BuildIcon from "../../assets/buildred.png";
-import { Game } from "./matches.t";
+import { Game } from "./t.matches";
 import { toFloatPrecision as fp } from "../../utils/numbers";
 
 const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Matches, { exampleMatches } from "./matches.t";
+import Matches, { exampleMatches } from "./t.matches";
 import { RootState } from "../../app/store";
 
 type GmaeType = "Total" | "Ranked Solo" | "Ranked Flex";
