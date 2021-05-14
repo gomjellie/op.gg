@@ -136,6 +136,7 @@
           display: flex;
           flex-direction: row;
           align-items: center;
+          justify-content: space-between;
           border-bottom: 1px solid $borderGray;
           height: 53px;
           gap: $defaultMargin;
@@ -150,7 +151,6 @@
           .ChampName {
             color: #5e5e5e;
             font-size: 12px;
-            margin-right: 20px;
           }
 
           .WinRatio {
@@ -159,9 +159,10 @@
           }
 
           .WinLose {
+            margin-right: 5px;
             display: flex;
             flex-direction: row;
-            width: 100px;
+            width: 85px;
             align-items: flex-end;
 
             .Win {

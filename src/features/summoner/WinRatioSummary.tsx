@@ -43,7 +43,7 @@ const WinRatioSummary: React.FC = () => {
     return (
       <div className="ChampsWinRatioBox">
         {renderedTabs}
-        {recents.map((item, idx) => (
+        {recents?.map((item, idx) => (
           <div
             className="ChampWinRatioItem"
             key={`ChampWinRatioWeek_${item.name}_${idx}`}
@@ -70,7 +70,7 @@ const WinRatioSummary: React.FC = () => {
   return (
     <div className="ChampsWinRatioBox">
       {renderedTabs}
-      {mostChampions.map((champ, idx) => {
+      {mostChampions?.map((champ, idx) => {
         const { kills, deaths, assists, games, wins } = champ;
         const prefix = "ChampWinRatio";
         return (

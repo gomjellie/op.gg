@@ -9,6 +9,7 @@ import WinRatioSummary from "./WinRatioSummary";
 import { useSelector, useDispatch } from "react-redux";
 import { selectGameType, switchGameType } from "./matchesSlice";
 import { fetchSummoner, selectSummonerStatus } from "./summonerSlice";
+import { fetchMost, selectMostStatus } from "./mostSlice";
 
 interface MatchParams {
   userName: string;
@@ -19,12 +20,19 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
   const gameType = useSelector(selectGameType);
   const dispatch = useDispatch();
   const summonerStatus = useSelector(selectSummonerStatus);
+  const mostStatus = useSelector(selectMostStatus);
 
   useEffect(() => {
     if (summonerStatus === "idle") {
       dispatch(fetchSummoner(userName));
     }
   }, [summonerStatus, userName, dispatch]);
+
+  useEffect(() => {
+    if (mostStatus === "idle") {
+      dispatch(fetchMost(userName));
+    }
+  }, [mostStatus, userName, dispatch]);
 
   return (
     <div className="Summoner">

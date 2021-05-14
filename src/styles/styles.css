@@ -356,6 +356,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-bottom: 1px solid #cdd2d2;
   height: 53px;
   gap: 0.8rem;
@@ -371,7 +374,6 @@
 .Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .ChampName {
   color: #5e5e5e;
   font-size: 12px;
-  margin-right: 20px;
 }
 
 .Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .WinRatio {
@@ -380,6 +382,7 @@
 }
 
 .Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .WinLose {
+  margin-right: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,7 +390,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 100px;
+  width: 85px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
