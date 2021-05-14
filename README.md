@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # OP.GG HIRE ME
 
-<img width="1048" alt="Screen Shot 2021-05-14 at 2 18 20 AM" src="https://user-images.githubusercontent.com/13645032/118161657-ce87e180-b45a-11eb-9a83-f0cda049ab4d.png">
+<img width="1079" alt="Screen Shot 2021-05-14 at 9 30 14 AM" src="https://user-images.githubusercontent.com/13645032/118203483-26443e00-b497-11eb-91a2-ccd4567c8977.png">
 
 ## `npm run start`
 
