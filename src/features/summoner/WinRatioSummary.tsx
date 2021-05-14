@@ -1,25 +1,39 @@
-import React, { useCallback, useState } from "react";
-import { exampleMost } from "./t.most";
+import React from "react";
 import { toFloatPrecision } from "../../utils/numbers";
-
-type Tab = "Champion Win Ratio" | "Rank win rate per week";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectMostChampions,
+  selectMostRecents,
+  selectMostType,
+  switchMostType,
+} from "./mostSlice";
 
 const WinRatioSummary: React.FC = () => {
-  const data = exampleMost;
-  const [tab, setTab] = useState<Tab>("Champion Win Ratio");
-  const onChampWinRatioClick = useCallback(() => {
-    setTab("Champion Win Ratio");
-  }, []);
-  const onPerWeekClick = useCallback(() => {
-    setTab("Rank win rate per week");
-  }, []);
+  const tab = useSelector(selectMostType);
+  const mostChampions = useSelector(selectMostChampions);
+  const recents = useSelector(selectMostRecents);
+  const dispatch = useDispatch();
 
   const renderedTabs = (
     <div className="LRContainer">
-      <div className={`ChampsWinRateButton ${tab === "Champion Win Ratio" ? "Selected" : ""}`} onClick={onChampWinRatioClick}>
+      <div
+        className={`ChampsWinRateButton ${
+          tab === "Champion Win Ratio" ? "Selected" : ""
+        }`}
+        onClick={() =>
+          dispatch(switchMostType({ mostType: "Champion Win Ratio" }))
+        }
+      >
         Champion Win ratio
       </div>
-      <div className={`ChampsWinRateButton ${tab === "Rank win rate per week" ? "Selected": ""}`} onClick={onPerWeekClick}>
+      <div
+        className={`ChampsWinRateButton ${
+          tab === "Rank win rate per week" ? "Selected" : ""
+        }`}
+        onClick={() =>
+          dispatch(switchMostType({ mostType: "Rank win rate per week" }))
+        }
+      >
         Rank win rate per week
       </div>
     </div>
@@ -28,9 +42,12 @@ const WinRatioSummary: React.FC = () => {
   if (tab === "Rank win rate per week") {
     return (
       <div className="ChampsWinRatioBox">
-        { renderedTabs }
-        {data.recentWinRate.map((item, idx) => (
-          <div className="ChampWinRatioItem" key={`ChampWinRatioWeek_${item.name}_${idx}`}>
+        {renderedTabs}
+        {recents.map((item, idx) => (
+          <div
+            className="ChampWinRatioItem"
+            key={`ChampWinRatioWeek_${item.name}_${idx}`}
+          >
             <img className="ChampAvatar" src={item.imageUrl} alt="" />
             <div className="ChampName">{item.name}</div>
             <div className="WinRatio">
@@ -52,12 +69,15 @@ const WinRatioSummary: React.FC = () => {
 
   return (
     <div className="ChampsWinRatioBox">
-      { renderedTabs }
-      {data.champions.map((champ, idx) => {
+      {renderedTabs}
+      {mostChampions.map((champ, idx) => {
         const { kills, deaths, assists, games, wins } = champ;
         const prefix = "ChampWinRatio";
         return (
-          <div className="ChampWinRatioItem" key={`${prefix}${champ.name}${idx}`}>
+          <div
+            className="ChampWinRatioItem"
+            key={`${prefix}${champ.name}${idx}`}
+          >
             <img className="ChampAvatar" src={champ.imageUrl} alt="" />
             <div className="TDContainer1">
               <div className="Top1">{champ.name}</div>
