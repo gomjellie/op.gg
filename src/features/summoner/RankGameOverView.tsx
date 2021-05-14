@@ -4,7 +4,7 @@ import UnrankedIcon from "../../assets/unranked.png";
 import { selectSummoner } from "./summonerSlice";
 
 interface Props {
-  rankType: "솔랭" | "자유 5:5 랭크";
+  rankType: "Ranked Solo" | "Flex 5:5 Rank";
 }
 
 const RankGameOverView: React.FC<Props> = ({ rankType }) => {

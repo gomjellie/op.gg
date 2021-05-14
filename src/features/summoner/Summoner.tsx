@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import QuickLook from "./QuickLook";
@@ -8,15 +8,23 @@ import RankGameOverView from "./RankGameOverView";
 import WinRatioSummary from "./WinRatioSummary";
 import { useSelector, useDispatch } from "react-redux";
 import { selectGameType, switchGameType } from "./matchesSlice";
+import { fetchSummoner, selectSummonerStatus } from "./summonerSlice";
 
 interface MatchParams {
   userName: string;
 }
 
 const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
-  // const { userName } = match.params;
+  const { userName } = match.params;
   const gameType = useSelector(selectGameType);
   const dispatch = useDispatch();
+  const summonerStatus = useSelector(selectSummonerStatus);
+
+  useEffect(() => {
+    if (summonerStatus === "idle") {
+      dispatch(fetchSummoner(userName));
+    }
+  }, [summonerStatus, userName, dispatch]);
 
   return (
     <div className="Summoner">
@@ -24,8 +32,8 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
       <QuickLook />
       <main className="SummonerBody">
         <div className="SideContent">
-          <RankGameOverView rankType="솔랭" />
-          <RankGameOverView rankType="자유 5:5 랭크" />
+          <RankGameOverView rankType="Ranked Solo" />
+          <RankGameOverView rankType="Flex 5:5 Rank" />
           <WinRatioSummary />
         </div>
         <div className="RealContent">
