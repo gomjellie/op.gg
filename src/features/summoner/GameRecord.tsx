@@ -17,16 +17,16 @@ const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   );
 };
 
-const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
+const TeamLists: React.FC<{ summonerName: string, gameId: string }> = ({ summonerName, gameId }) => {
   const [matchDetails, setMatchDetails] = useState<MatchDetails>();
 
   useEffect(() => {
     fetch(
-      `https://codingtest.op.gg/api/summoner/${game.summonerName}/matchDetail/${game.gameId}`
+      `https://codingtest.op.gg/api/summoner/${summonerName}/matchDetail/${gameId}`
     )
       .then((res) => res.json())
       .then((res) => setMatchDetails(res));
-  }, [game]);
+  }, [summonerName, gameId]);
 
   if (matchDetails === undefined) {
     return <div className="GR6"></div>;
@@ -39,7 +39,7 @@ const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
           <PlayerStick
             imageUrl={player.champion.imageUrl}
             summonerName={player.summonerName}
-            key={`Game_${game.gameId}PlayerStick_${player.summonerName}_${idx}`}
+            key={`Game_${gameId}PlayerStick_${player.summonerName}_${idx}`}
           />
         ))}
       </span>
@@ -48,13 +48,15 @@ const TeamLists: React.FC<{ game: Game }> = ({ game }) => {
           <PlayerStick
             imageUrl={player.champion.imageUrl}
             summonerName={player.summonerName}
-            key={`Game_${game.gameId}PlayerStick_${player.summonerName}_${idx}`}
+            key={`Game_${gameId}PlayerStick_${player.summonerName}_${idx}`}
           />
         ))}
       </span>
     </div>
   );
 };
+
+const MemoTeamLists = React.memo(TeamLists);
 
 const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
   const vd = game.isWin ? "victory" : "defeat";
@@ -162,7 +164,7 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
           Control Ward {game.stats.ward.visionWardsBought}
         </div>
       </div>
-      <TeamLists game={game} />
+      <MemoTeamLists gameId={game.gameId} summonerName={game.summonerName} />
     </div>
   );
 };
