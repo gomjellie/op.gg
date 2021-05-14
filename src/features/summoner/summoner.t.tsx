@@ -40,13 +40,13 @@ type Summoner = {
 };
 
 const exampleSummoner: Summoner = {
-  name: "gomjellie",
+  name: "pythonic",
   level: 106,
   profileImageUrl:
     "https://opgg-static.akamaized.net/images/profile_icons/profileIcon1625.jpg",
   profileBorderImageUrl:
     "https://opgg-static.akamaized.net/images/borders2/challenger.png",
-  url: "https://www.op.gg/summoner/userName=gomjellie",
+  url: "https://www.op.gg/summoner/userName=pythonic",
   leagues: [
     {
       hasResults: true,

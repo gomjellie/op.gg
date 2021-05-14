@@ -11,7 +11,7 @@ const QuickLook: React.FC = () => {
       <div className="Seasons">
         {previousTiers.map((prevTier) => (
           <div className="SeasonBadge" key={`SeasonBadge_${prevTier.season}`}>
-            S{prevTier.season} {prevTier.shortString}
+            S{prevTier.season} {prevTier.tier}
           </div>
         ))}
       </div>
