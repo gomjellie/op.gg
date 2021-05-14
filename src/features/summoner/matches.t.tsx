@@ -1,47 +1,50 @@
-type Matches = {
-  games: {
-    mmr: number;
-    champion: {
-      imageUrl: string;
-      level: number;
-    };
-    spells: {
-      imageUrl: string;
-    }[];
-    items: {
-      imageUrl: string;
-    }[];
-    needRenew: boolean;
-    gameId: string;
-    createDate: number;
-    gameLength: number;
-    gameType: string;
-    summonerId: string;
-    summonerName: string;
-    tierRankShort: string;
-    stats: {
-      general: {
-        kill: number;
-        death: number;
-        assist: number;
-        kdaString: string;
-        cs: number;
-        csPerMin: number;
-        contributionForKillRate: string;
-        goldEarned: number;
-        totalDamageDealtToChampions: number;
-        largestMultiKillString: string;
-        opScoreBadge: string;
-      };
-      ward: {
-        sightWardsBought: number;
-        visionWardsBought: number;
-      };
-    };
-    mapInfo: null;
-    peak: string[];
-    isWin: boolean;
+
+type Game = {
+  mmr: number | null;
+  champion: {
+    imageUrl: string;
+    level: number;
+  };
+  spells: {
+    imageUrl: string;
   }[];
+  items: {
+    imageUrl: string;
+  }[];
+  needRenew: boolean;
+  gameId: string;
+  createDate: number;
+  gameLength: number;
+  gameType: string;
+  summonerId: string;
+  summonerName: string;
+  tierRankShort: string;
+  stats: {
+    general: {
+      kill: number;
+      death: number;
+      assist: number;
+      kdaString: string;
+      cs: number;
+      csPerMin: number;
+      contributionForKillRate: string;
+      goldEarned: number;
+      totalDamageDealtToChampions: number;
+      largestMultiKillString: string;
+      opScoreBadge: string;
+    };
+    ward: {
+      sightWardsBought: number;
+      visionWardsBought: number;
+    };
+  };
+  mapInfo: null;
+  peak: string[];
+  isWin: boolean;
+};
+
+type Matches = {
+  games: Game[];
   champions: {
     id: number,
     key: string,
@@ -1510,3 +1513,5 @@ const exampleMatches: Matches = {
 export default Matches;
 
 export { exampleMatches };
+
+export type { Game };

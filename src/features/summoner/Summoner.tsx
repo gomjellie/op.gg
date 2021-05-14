@@ -3,7 +3,7 @@ import { RouteComponentProps } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import QuickLook from "./QuickLook";
 import Summary from "./Summary";
-import GameRecord from "./GameRecord";
+import GameRecordList from "./GameRecordList";
 import RankGameOverView from "./RankGameOverView";
 import WinRatioSummary from "./WinRatioSummary";
 import { useSelector, useDispatch } from "react-redux";
@@ -60,13 +60,7 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
             </div>
           </div>
           <Summary />
-          <div className="GameRecords">
-            <GameRecord />
-            <GameRecord />
-            <GameRecord />
-            <GameRecord />
-            <GameRecord />
-          </div>
+          <GameRecordList />
         </div>
       </main>
     </div>

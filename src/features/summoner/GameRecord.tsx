@@ -1,11 +1,8 @@
 import React from "react";
-import ZyraImg from "../../assets/champs/Zyra.png";
-import FlashImg from "../../assets/spells/flash.png";
-import IgniteImg from "../../assets/spells/ignite.png";
-import ArcaneCometImg from "../../assets/runes/arcaneComet.png";
-import LiandryIcon from "../../assets/items/liandry.png";
 import RedWardIcon from "../../assets/wards/red.png";
 import BuildIcon from "../../assets/buildred.png";
+import { Game } from "./matches.t";
+import { toFloatPrecision as fp } from "../../utils/numbers";
 
 const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   imageUrl,
@@ -19,63 +16,99 @@ const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   );
 };
 
-const GameRecord: React.FC = () => {
+const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
+  const vd = game.isWin ? "victory" : "defeat";
+
+  const getChampName = (champUrl: string) => {
+    return champUrl.split("champion/")[1].split(".png")[0];
+  };
+
   return (
-    <div className="GameRecord defeat">
+    <div className={`GameRecord ${vd}`}>
       <div className="GR1">
-        <div className="GameType">Ranked Solo</div>
-        <div className="TimeAgo">8 days ago</div>
+        <div className="GameType">{game.gameType}</div>
+        <div className="TimeAgo">
+          {-fp(game.createDate, 60 * 24, 0)} days ago
+        </div>
         <div className="Divider"></div>
-        <div className="Outcome defeat">Defeat</div>
-        <div className="PlayTime">21m 10s</div>
+        <div className={`Outcome ${vd}`}>{vd}</div>
+        <div className="PlayTime">
+          {fp(game.gameLength, 60, 0)}m {game.gameLength % 60}s
+        </div>
       </div>
       <div className="GR2">
         <div className="ChampVisuals">
-          <img className="ChampAvatar" src={ZyraImg} alt="ChampAvatar" />
+          <img
+            className="ChampAvatar"
+            src={game.champion.imageUrl}
+            alt="ChampAvatar"
+          />
           <div className="Spells">
-            <img className="Spell" src={FlashImg} alt="Spell" />
-            <img className="Spell" src={IgniteImg} alt="Spell" />
+            <img className="Spell" src={game.spells[0].imageUrl} alt="Spell" />
+            <img className="Spell" src={game.spells[1].imageUrl} alt="Spell" />
           </div>
           <div className="Runes">
-            <img className="Rune" src={ArcaneCometImg} alt="Rune" />
-            <img className="Rune" src={ArcaneCometImg} alt="Rune" />
+            <img className="Rune" src={game.peak[0]} alt="Rune" />
+            <img className="Rune" src={game.peak[1]} alt="Rune" />
           </div>
         </div>
-        <div className="ChampName">Zyra</div>
+        <div className="ChampName">{getChampName(game.champion.imageUrl)}</div>
       </div>
       <div className="GR3">
         <div className="KDASeperated">
-          <span className="K">4</span>/<span className="D">6</span>/
-          <span className="A">4</span>
+          <span className="K">{game.stats.general.kill}</span>/
+          <span className="D">{game.stats.general.death}</span>/
+          <span className="A">{game.stats.general.assist}</span>
         </div>
         <div className="KDAScoreContainer">
-          <span className="KDAScore">1.33:1</span>
+          <span className="KDAScore">{game.stats.general.kdaString}</span>
           <span className="KDAScoreSuffix">KDA</span>
         </div>
         <div className="Badges">
-          <div className="Badge kill">Quadra Kill</div>
-          <div className="Badge ace">ACE</div>
+          {game.stats.general.largestMultiKillString && (
+            <div className="Badge kill">
+              {game.stats.general.largestMultiKillString}
+            </div>
+          )}
+          {game.stats.general.opScoreBadge && (
+            <div className="Badge ace">{game.stats.general.opScoreBadge}</div>
+          )}
         </div>
       </div>
       <div className="GR4">
-        <span className="Level">Level9</span>
-        <span className="CS">21 (1) CS</span>
-        <span className="PKill">P/Kill 67%</span>
+        <span className="Level">Level {game.champion.level}</span>
+        <span className="CS">
+          {game.stats.general.cs} ({game.stats.general.csPerMin}) CS
+        </span>
+        <span className="PKill">
+          P/Kill {game.stats.general.contributionForKillRate}
+        </span>
       </div>
       <div className="GR5">
         <div className="Items">
-          <img className="Item" src={LiandryIcon} alt="" />
-          <div className="Item" />
-          <div className="Item" />
-          <div className="Item" />
-          <div className="Item" />
-          <div className="Item" />
-          <div className="Item" />
+          {[
+            ...game.items,
+            { imageUrl: null },
+            { imageUrl: null },
+            { imageUrl: null },
+            { imageUrl: null },
+            { imageUrl: null },
+            { imageUrl: null },
+            { imageUrl: null },
+          ]
+            .slice(0, 7)
+            .map((item) => {
+              /**
+               * TODO: make unique Key id
+               */
+              if (item.imageUrl === null) return <div className="Item" />;
+              return <img className="Item" src={item.imageUrl} alt="" />;
+            })}
           <img className="Item" src={BuildIcon} alt="Build" />
         </div>
         <div className="ControlWardCount">
           <img className="ControlWard" src={RedWardIcon} alt="" />
-          Control Ward 4
+          Control Ward {game.stats.ward.visionWardsBought}
         </div>
       </div>
       <div className="GR6">
