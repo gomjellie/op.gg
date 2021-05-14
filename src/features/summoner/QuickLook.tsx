@@ -27,7 +27,7 @@ const QuickLook: React.FC = () => {
           <div className="UserName"> {summoner.name} </div>
           <span className="LadderRank">
             Ladder Rank
-            <span className="Accent"> {summoner.ladderRank.rank} </span> (
+            <span className="Accent"> {summoner.ladderRank.rank.toLocaleString('en-US')} </span> (
             {summoner.ladderRank.rankPercentOfTop}% of top)
           </span>
         </div>

@@ -141,6 +141,7 @@
 
 .QuickLook .QuickLookBottomContainer .UserNameAndRaderInfo .LadderRank .Accent {
   font-weight: bold;
+  color: #059ede;
 }
 
 .Summoner {
@@ -799,6 +800,7 @@
   color: #666666;
   padding-left: 1rem;
   padding-top: 1rem;
+  padding-bottom: 0.4rem;
 }
 
 .Summoner main.SummonerBody .RealContent .Summary .PreferredPosition .Title {
