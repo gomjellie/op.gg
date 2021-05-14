@@ -1,4 +1,3 @@
-
 type Game = {
   mmr: number | null;
   champion: {
@@ -46,30 +45,30 @@ type Game = {
 type Matches = {
   games: Game[];
   champions: {
-    id: number,
-    key: string,
-    name: string,
-    imageUrl: string,
-    games: number,
-    kills: number,
-    deaths: number,
-    assists: number,
-    wins: number,
-    losses: number,
+    id: number;
+    key: string;
+    name: string;
+    imageUrl: string;
+    games: number;
+    kills: number;
+    deaths: number;
+    assists: number;
+    wins: number;
+    losses: number;
   }[];
   positions: {
-    games: number,
-    wins: number,
-    losses: number,
-    position: string,
-    positionName: string,
+    games: number;
+    wins: number;
+    losses: number;
+    position: string;
+    positionName: string;
   }[];
   summary: {
-    wins: number,
-    losses: number,
-    kills: number,
-    deaths: number,
-    assists: number,
+    wins: number;
+    losses: number;
+    kills: number;
+    deaths: number;
+    assists: number;
   };
 };
 
