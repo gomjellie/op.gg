@@ -3,6 +3,7 @@ import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Summoner from "./features/summoner/Summoner";
+import Main from "./features/main/Main";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/summoner/userName=:userName" component={Summoner} />
+          <Route exact path="/" component={Main} />
         </Switch>
       </Router>
     </div>

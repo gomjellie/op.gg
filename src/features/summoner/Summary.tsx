@@ -118,10 +118,9 @@ const OverView: React.FC = () => {
       </div>
       <div className="PreferredPosition">
         <div className="Title">Preferred Position(Rank)</div>
-        {positions.map((position) => {
+        {positions.map((position, idx) => {
           return (
-            /* Key 안전하지 않을 수 있음 */
-            <div className="LaneInfo" key={`LaneInfo_${position.position}`}>
+            <div className="LaneInfo" key={`LaneInfo_${position.position}_${idx}`}>
               <img
                 className="LaneIcon"
                 src={positionImgFactory(position.position as Position)}

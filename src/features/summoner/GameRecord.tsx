@@ -25,7 +25,11 @@ const TeamLists: React.FC<{ summonerName: string, gameId: string }> = ({ summone
       `https://codingtest.op.gg/api/summoner/${summonerName}/matchDetail/${gameId}`
     )
       .then((res) => res.json())
-      .then((res) => setMatchDetails(res));
+      .then((res) => setMatchDetails?.(res));
+    
+    return () => {
+      setMatchDetails(undefined);
+    }
   }, [summonerName, gameId]);
 
   if (matchDetails === undefined) {
