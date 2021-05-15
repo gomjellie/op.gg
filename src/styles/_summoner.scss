@@ -169,15 +169,16 @@
               background-color: #1f8ecd;
               color: white;
               font-size: 12px;
-              padding: 4px 0px;
+              padding: 4px 0px 4px 4px;
               border-radius: 5px 0px 0px 5px;
             }
 
             .Loss {
               background-color: #ee5a52;
               color: white;
+              text-align: right;
               font-size: 12px;
-              padding: 4px 0px;
+              padding: 4px 4px 4px 0px;
               border-radius: 0px 5px 5px 0px;
             }
           }
