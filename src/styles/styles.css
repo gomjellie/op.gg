@@ -949,6 +949,11 @@
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 .GameType {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   font-weight: bold;
   margin-bottom: 2px;
 }
