@@ -1,16 +1,16 @@
 .SearchBar {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  // align-items: flex-end;
   font-family: "AppleSDGothicNeo";
   background-color: $bannerBlue;
   height: 97px;
 
   .OPGG {
     position: absolute;
+    top: 2rem;
     left: 50%;
     margin-left: -480px;
-    margin-bottom: 2rem;
 
     img {
       display: block;
@@ -23,9 +23,9 @@
   .SearchInputContainer {
     position: absolute;
     right: 1rem;
+    top: 3rem;
     width: 260px;
     height: 32px;
     margin-right: 1rem;
-    margin-bottom: 1rem;
   }
 }

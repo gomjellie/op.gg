@@ -38,9 +38,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   font-family: "AppleSDGothicNeo";
   background-color: #1ea1f7;
   height: 97px;
@@ -48,9 +45,9 @@
 
 .SearchBar .OPGG {
   position: absolute;
+  top: 2rem;
   left: 50%;
   margin-left: -480px;
-  margin-bottom: 2rem;
 }
 
 .SearchBar .OPGG img {
@@ -64,10 +61,10 @@
 .SearchBar .SearchInputContainer {
   position: absolute;
   right: 1rem;
+  top: 3rem;
   width: 260px;
   height: 32px;
   margin-right: 1rem;
-  margin-bottom: 1rem;
 }
 
 .QuickLook {
@@ -537,6 +534,11 @@
 }
 
 .Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer3 .Down3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   font-family: Helvetica;
   font-size: 11px;
   color: #879292;

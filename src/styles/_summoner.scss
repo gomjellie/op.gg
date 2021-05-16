@@ -229,6 +229,7 @@
               font-weight: bold;
             }
             .Down3 {
+              @include lineLimit(1);
               font-family: Helvetica;
               font-size: 11px;
               color: #879292;
