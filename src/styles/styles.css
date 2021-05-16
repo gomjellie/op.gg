@@ -38,9 +38,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -50,7 +47,9 @@
 }
 
 .SearchBar .OPGG {
-  padding-left: 2rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -480px;
   margin-bottom: 2rem;
 }
 
@@ -63,6 +62,8 @@
 }
 
 .SearchBar .SearchInputContainer {
+  position: absolute;
+  right: 1rem;
   width: 260px;
   height: 32px;
   margin-right: 1rem;
