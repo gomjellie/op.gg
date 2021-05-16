@@ -930,10 +930,12 @@
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord.defeat {
   background-color: #d6b5b2;
+  border-color: #cea7a7;
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord.victory {
   background-color: #b0ceea;
+  border-color: #99b9cf;
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 {
