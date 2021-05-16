@@ -1,11 +1,21 @@
 .SearchBar {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   font-family: "AppleSDGothicNeo";
   background-color: $bannerBlue;
   height: 97px;
+
+  .OPGG {
+    padding-left: 1rem;
+    margin-bottom: 4rem;
+
+    img {
+      display: block;
+      cursor: pointer;
+    }
+  }
 
   .SearchInputBox {
     display: grid;

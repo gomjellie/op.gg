@@ -6,15 +6,25 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
   font-family: "AppleSDGothicNeo";
   background-color: #1ea1f7;
   height: 97px;
+}
+
+.SearchBar .OPGG {
+  padding-left: 1rem;
+  margin-bottom: 4rem;
+}
+
+.SearchBar .OPGG img {
+  display: block;
+  cursor: pointer;
 }
 
 .SearchBar .SearchInputBox {
