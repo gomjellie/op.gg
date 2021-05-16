@@ -57,9 +57,9 @@ const SummonerSearchInput: React.FC = () => {
       {serachHistory
         .slice(-5)
         .reverse()
-        .map((user) => {
+        .map((user, idx) => {
           return (
-            <div className="SummonerSearched">
+            <div className="SummonerSearched" key={`SummonerSearched_${user}_${idx}`}>
               <span className="SummonerName" onClick={() => onSearch(user)}>
                 {user}
               </span>
