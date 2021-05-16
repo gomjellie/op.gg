@@ -13,7 +13,9 @@ const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   return (
     <div className="Player">
       <img className="Champion" src={imageUrl} alt="" />
-      <a href={`/summoner/userName=${summonerName}`} className="SummonerName">{summonerName}</a>
+      <a href={`/summoner/userName=${summonerName}`} className="SummonerName">
+        {summonerName}
+      </a>
     </div>
   );
 };
@@ -124,13 +126,19 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
         </div>
       </div>
       <div className="GR4">
-        <span className="Level">Level {game.champion.level}</span>
-        <span className="CS">
+        <div className="Level">Level {game.champion.level}</div>
+        <div className="CS">
           {game.stats.general.cs} ({game.stats.general.csPerMin}) CS
-        </span>
-        <span className="PKill">
+        </div>
+        <div className="PKill">
           P/Kill {game.stats.general.contributionForKillRate}
-        </span>
+        </div>
+        {game.gameType.includes("Rank") && (
+          <>
+            <div className="TierAverage">Tier Average</div>
+            <div className="Tier">{game.tierRankShort}</div>
+          </>
+        )}
       </div>
       <div className="GR5">
         <div className="Items">

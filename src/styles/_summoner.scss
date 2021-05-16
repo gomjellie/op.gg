@@ -564,7 +564,7 @@
           }
 
           .GR2 {
-            min-width: 90px;
+            min-width: 110px;
             display: flex;
             height: 100%;
             flex-direction: column;
@@ -575,13 +575,13 @@
             .ChampVisuals {
               display: flex;
               align-items: center;
-              height: 40px;
+              height: 46px;
               gap: 4px;
 
               img.ChampAvatar {
                 display: block;
-                height: 40px;
-                width: 40px;
+                height: 46px;
+                width: 46px;
                 border-radius: 50%;
                 object-fit: fill;
               }
@@ -630,7 +630,7 @@
               font-size: 15px;
               color: #948e8d;
               .K {
-                color: #948e8d;
+                color: #555e5e;
                 margin-right: 0.2rem;
               }
               .D {
@@ -640,7 +640,7 @@
               }
               .A {
                 margin-left: 0.2rem;
-                color: #948e8d;
+                color: #555e5e;
               }
             }
 
@@ -684,21 +684,25 @@
             min-width: 80px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             font-size: 11px;
             gap: 0.4rem;
-            padding-top: 0.8rem;
             color: #555e5e;
             font-family: Helvetica;
 
             .PKill {
               color: #d0021b;
             }
+
+            .Tier {
+              color: #353a3a;
+              font-weight: bold;
+            }
           }
 
           .GR5 {
-            min-width: 140px;
+            min-width: 120px;
             display: flex;
             flex-direction: column;
             justify-content: center;
