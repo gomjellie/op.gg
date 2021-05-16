@@ -614,7 +614,6 @@
           flex-direction: row;
   min-width: 250px;
   border-right: 1px solid #cdd2d2;
-  padding-left: 0.8rem;
 }
 
 .Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Left {
@@ -733,7 +732,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-width: 250px;
+  min-width: 230px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -830,7 +829,7 @@
       -ms-flex-align: start;
           align-items: flex-start;
   color: #666666;
-  padding-left: 1rem;
+  padding-left: 20px;
   padding-top: 1rem;
   padding-bottom: 0.4rem;
 }

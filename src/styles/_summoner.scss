@@ -285,7 +285,6 @@
           flex-direction: row;
           min-width: 250px;
           border-right: 1px solid #cdd2d2;
-          padding-left: $defaultMargin;
 
           .Left {
             display: flex;
@@ -380,7 +379,7 @@
 
         .MostChampWinRatios {
           display: flex;
-          min-width: 250px;
+          min-width: 230px;
           flex-direction: column;
           justify-content: space-evenly;
           border-right: 1px solid #cdd2d2;
@@ -448,7 +447,7 @@
           flex-direction: column;
           align-items: flex-start;
           color: #666666;
-          padding-left: 1rem;
+          padding-left: 20px;
           padding-top: 1rem;
           padding-bottom: 0.4rem;
 
