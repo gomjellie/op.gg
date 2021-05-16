@@ -3,6 +3,7 @@ import RedWardIcon from "../../assets/wards/red.png";
 import BuildIcon from "../../assets/buildred.png";
 import { Game } from "./t.matches";
 import { toFloatPrecision as fp } from "../../utils/numbers";
+import { getTimeAgoString } from "../../utils/dates";
 import MatchDetails from "./t.matchDetails";
 
 const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
@@ -17,7 +18,10 @@ const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   );
 };
 
-const TeamLists: React.FC<{ summonerName: string, gameId: string }> = ({ summonerName, gameId }) => {
+const TeamLists: React.FC<{ summonerName: string; gameId: string }> = ({
+  summonerName,
+  gameId,
+}) => {
   const [matchDetails, setMatchDetails] = useState<MatchDetails>();
 
   useEffect(() => {
@@ -26,10 +30,10 @@ const TeamLists: React.FC<{ summonerName: string, gameId: string }> = ({ summone
     )
       .then((res) => res.json())
       .then((res) => setMatchDetails?.(res));
-    
+
     return () => {
       setMatchDetails(undefined);
-    }
+    };
   }, [summonerName, gameId]);
 
   if (matchDetails === undefined) {
@@ -73,10 +77,7 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
     <div className={`GameRecord ${vd}`}>
       <div className="GR1">
         <div className="GameType">{game.gameType}</div>
-        <div className="TimeAgo">
-          N days ago
-          {/* {fp(game.createDate, 60 * 24 * 10000, 0)} days ago */}
-        </div>
+        <div className="TimeAgo">{getTimeAgoString(game.createDate)}</div>
         <div className="Divider"></div>
         <div className={`Outcome ${vd}`}>{vd}</div>
         <div className="PlayTime">
