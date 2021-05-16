@@ -21,6 +21,7 @@
 
       .RankGame {
         @include useDefaultBorder();
+        border-radius: 3px;
 
         display: flex;
         height: 140px;

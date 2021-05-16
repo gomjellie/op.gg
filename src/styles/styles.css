@@ -225,6 +225,7 @@
 
 .Summoner main.SummonerBody .SideContent .RankGame {
   border: 1px solid #cdd2d2;
+  border-radius: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
