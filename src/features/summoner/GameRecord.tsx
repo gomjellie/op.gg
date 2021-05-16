@@ -13,7 +13,7 @@ const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   return (
     <div className="Player">
       <img className="Champion" src={imageUrl} alt="" />
-      <span className="SummonerName">{summonerName}</span>
+      <a href={`/summoner/userName=${summonerName}`} className="SummonerName">{summonerName}</a>
     </div>
   );
 };

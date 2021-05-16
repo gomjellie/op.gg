@@ -765,11 +765,12 @@
                   object-fit: fill;
                 }
 
-                .SummonerName {
+                a.SummonerName {
                   @include lineLimit(1);
                   font-family: Helvetica;
                   font-size: 11px;
                   color: #555555;
+                  text-decoration: none;
                 }
               }
             }
@@ -791,11 +792,12 @@
                   object-fit: fill;
                 }
 
-                .SummonerName {
+                a.SummonerName {
                   @include lineLimit(1);
                   font-family: Helvetica;
                   font-size: 11px;
                   color: #555555;
+                  text-decoration: none;
                 }
               }
             }

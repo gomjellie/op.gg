@@ -1260,7 +1260,7 @@
      object-fit: fill;
 }
 
-.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team1 .Player .SummonerName {
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team1 .Player a.SummonerName {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -1269,6 +1269,7 @@
   font-family: Helvetica;
   font-size: 11px;
   color: #555555;
+  text-decoration: none;
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team2 {
@@ -1298,7 +1299,7 @@
      object-fit: fill;
 }
 
-.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team2 .Player .SummonerName {
+.Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team2 .Player a.SummonerName {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -1307,6 +1308,7 @@
   font-family: Helvetica;
   font-size: 11px;
   color: #555555;
+  text-decoration: none;
 }
 
 .Main {
