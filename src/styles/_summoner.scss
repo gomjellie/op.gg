@@ -209,9 +209,9 @@
               font-family: Helvetica;
               font-size: 13px;
               font-weight: bold;
-              color: #5e5e5e;
             }
             .Down2 {
+              @include lineLimit(1);
               font-family: Helvetica;
               font-size: 11px;
               color: #879292;
@@ -227,7 +227,6 @@
               font-family: Helvetica;
               font-size: 13px;
               font-weight: bold;
-              color: #5e5e5e;
             }
             .Down3 {
               font-family: Helvetica;
@@ -365,10 +364,6 @@
                 margin: 0px 4px;
 
                 font-weight: bold;
-
-                &.green {
-                  color: #2daf7f;
-                }
               }
 
               .WinRatio {
@@ -421,12 +416,8 @@
                 .WinRatio {
                   font-weight: bold;
                   margin-right: 0.5rem;
-                  &.black {
-                    color: #333333;
-                  }
-
-                  &.red {
-                    color: #c6443e;
+                  &.winRatioDefault {
+                    color: #333333 !important;
                   }
                 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { toFloatPrecision } from "../../utils/numbers";
+import { colorOfKDA, colorOfWinRatio } from "../../utils/colors";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectMostChampions,
@@ -86,7 +87,7 @@ const WinRatioSummary: React.FC = () => {
               </div>
             </div>
             <div className="TDContainer2">
-              <div className="Top2">
+              <div className={`Top2 ${colorOfKDA((kills + assists) / deaths)}`}>
                 {toFloatPrecision(kills + assists, deaths)}:1 KDA
               </div>
               <div className="Down2">
@@ -96,7 +97,7 @@ const WinRatioSummary: React.FC = () => {
               </div>
             </div>
             <div className="TDContainer3">
-              <div className="Top3">
+              <div className={`Top3 ${colorOfWinRatio(wins / games)}`}>
                 {toFloatPrecision(wins * 100, games, 0)}%
               </div>
               <div className="Down3">{games} Played</div>

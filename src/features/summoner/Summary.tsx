@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { Pie } from "react-chartjs-2";
+import { colorOfKDA, colorOfScore, colorOfWinRatio } from "../../utils/colors";
 import SupImg from "../../assets/mostpositions/sup.png";
 import AdcImg from "../../assets/mostpositions/adc.png";
 import MidImg from "../../assets/mostpositions/mid.png";
@@ -78,11 +79,11 @@ const OverView: React.FC = () => {
             </div>
           </div>
           <div className="Avg">
-            <div className="KDARatio green">
+            <div className={`KDARatio ${colorOfKDA((summary.kills + summary.assists) / summary.deaths)}`}>
               {fp(summary.kills + summary.assists, summary.deaths, 2)}:1
             </div>
             (
-            <div className="WinRatio red">
+            <div className={`WinRatio ${colorOfWinRatio(summary.wins / (summary.wins + summary.losses))}`}>
               {fp(summary.wins * 100, summary.wins + summary.losses, 0)}%
             </div>
             )
@@ -101,13 +102,13 @@ const OverView: React.FC = () => {
               <div className="RContainer">
                 <div className="Up">{champ.name}</div>
                 <div className="Down">
-                  <span className="WinRatio">
+                  <span className={`WinRatio ${colorOfWinRatio(champ.wins / champ.games)}`}>
                     {fp(champ.wins * 100, champ.games, 0)}%
                   </span>
                   <span className="WinLoose">
                     ({champ.wins}W {champ.losses}L)
                   </span>
-                  <span className="KDA">
+                  <span className={`KDA ${colorOfScore((champ.kills + champ.assists) / champ.deaths)}`}>
                     {fp(champ.kills + champ.assists, champ.deaths, 2)} KDA
                   </span>
                 </div>
@@ -120,7 +121,10 @@ const OverView: React.FC = () => {
         <div className="Title">Preferred Position(Rank)</div>
         {positions.map((position, idx) => {
           return (
-            <div className="LaneInfo" key={`LaneInfo_${position.position}_${idx}`}>
+            <div
+              className="LaneInfo"
+              key={`LaneInfo_${position.position}_${idx}`}
+            >
               <img
                 className="LaneIcon"
                 src={positionImgFactory(position.position as Position)}
@@ -133,7 +137,7 @@ const OverView: React.FC = () => {
                     {fp(position.games * 100, 20, 0)}%
                   </span>
                   <span className="WRPrefix">Win Ratio</span>
-                  <span className="WinRatio">
+                  <span className={`WinRatio ${colorOfWinRatio(position.wins / position.games)}`}>
                     {fp(position.wins * 100, position.games, 0)}%
                   </span>
                 </div>

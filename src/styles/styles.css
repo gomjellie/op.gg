@@ -1,3 +1,35 @@
+.kdaGreen {
+  color: #2daf7f !important;
+}
+
+.kdaBlue {
+  color: #1f8ecd !important;
+}
+
+.kdaYellow {
+  color: #e19205 !important;
+}
+
+.winRatioRed {
+  color: #c6443e !important;
+}
+
+.scoreYellow {
+  color: #e19205 !important;
+}
+
+.kdaDefault {
+  color: #555555 !important;
+}
+
+.winRatioDefault {
+  color: #555555 !important;
+}
+
+.scoreDefault {
+  color: #555555 !important;
+}
+
 .SearchBar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -468,10 +500,14 @@
   font-family: Helvetica;
   font-size: 13px;
   font-weight: bold;
-  color: #5e5e5e;
 }
 
 .Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer2 .Down2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   font-family: Helvetica;
   font-size: 11px;
   color: #879292;
@@ -497,7 +533,6 @@
   font-family: Helvetica;
   font-size: 13px;
   font-weight: bold;
-  color: #5e5e5e;
 }
 
 .Summoner main.SummonerBody .SideContent .ChampsWinRatioBox .ChampWinRatioItem .TDContainer3 .Down3 {
@@ -683,10 +718,6 @@
   font-weight: bold;
 }
 
-.Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .Avg .KDARatio.green {
-  color: #2daf7f;
-}
-
 .Summoner main.SummonerBody .RealContent .Summary .OveralWinRate .Right .Avg .WinRatio {
   display: inline;
 }
@@ -764,12 +795,8 @@
   margin-right: 0.5rem;
 }
 
-.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio.black {
-  color: #333333;
-}
-
-.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio.red {
-  color: #c6443e;
+.Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinRatio.winRatioDefault {
+  color: #333333 !important;
 }
 
 .Summoner main.SummonerBody .RealContent .Summary .MostChampWinRatios .MostChampWinRatio .RContainer .Down .WinLoose {
