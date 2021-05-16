@@ -77,7 +77,7 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
     <div className={`GameRecord ${vd}`}>
       <div className="GR1">
         <div className="GameType">{game.gameType}</div>
-        <div className="TimeAgo">{getTimeAgoString(game.createDate)}</div>
+        <time className="TimeAgo">{getTimeAgoString(game.createDate)}</time>
         <div className="Divider"></div>
         <div className={`Outcome ${vd}`}>{vd}</div>
         <div className="PlayTime">
