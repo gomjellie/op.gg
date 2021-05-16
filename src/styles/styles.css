@@ -175,7 +175,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 2.5rem;
   margin-top: 0.8rem;
   gap: 0.8rem;
 }
@@ -517,7 +516,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 750px;
+  width: 700px;
   margin-bottom: 0.8rem;
 }
 
@@ -564,7 +563,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  min-width: 750px;
+  min-width: 700px;
   height: 160px;
   margin-bottom: 0.8rem;
 }
@@ -577,7 +576,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  min-width: 300px;
+  min-width: 250px;
   border-right: 1px solid #cdd2d2;
   padding-left: 0.8rem;
 }
@@ -882,7 +881,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 750px;
+  min-width: 700px;
   gap: 0.8rem;
 }
 
@@ -911,7 +910,7 @@
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR1 {
-  min-width: 80px;
+  min-width: 70px;
   color: #555555;
   font-size: 11px;
   text-align: center;
@@ -946,7 +945,7 @@
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR2 {
-  min-width: 100px;
+  min-width: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1026,7 +1025,7 @@
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR3 {
-  min-width: 120px;
+  min-width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1203,7 +1202,7 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  min-width: 230px;
+  min-width: 220px;
 }
 
 .Summoner main.SummonerBody .RealContent .GameRecords .GameRecord .GR6 .Team1 {

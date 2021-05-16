@@ -8,7 +8,6 @@
     flex-direction: row;
     justify-content: center;
 
-    margin-left: 2.5rem;
     margin-top: $defaultMargin;
     gap: $defaultMargin;
 
@@ -243,7 +242,7 @@
     .RealContent {
       display: flex;
       flex-direction: column;
-      width: 750px;
+      width: 700px;
       margin-bottom: $defaultMargin;
 
       .QueueTypes {
@@ -277,14 +276,14 @@
         @include useDefaultBorder();
         display: flex;
         flex-direction: row;
-        min-width: 750px;
+        min-width: 700px;
         height: 160px;
         margin-bottom: $defaultMargin;
 
         .OveralWinRate {
           display: flex;
           flex-direction: row;
-          min-width: 300px;
+          min-width: 250px;
           border-right: 1px solid #cdd2d2;
           padding-left: $defaultMargin;
 
@@ -516,7 +515,7 @@
       .GameRecords {
         display: flex;
         flex-direction: column;
-        min-width: 750px;
+        min-width: 700px;
         gap: $defaultMargin;
 
         .GameRecord {
@@ -536,7 +535,7 @@
           }
 
           .GR1 {
-            min-width: 80px;
+            min-width: 70px;
             color: #555555;
             font-size: 11px;
             text-align: center;
@@ -570,7 +569,7 @@
           }
 
           .GR2 {
-            min-width: 100px;
+            min-width: 90px;
             display: flex;
             height: 100%;
             flex-direction: column;
@@ -622,7 +621,7 @@
           }
 
           .GR3 {
-            min-width: 120px;
+            min-width: 100px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -755,7 +754,7 @@
           .GR6 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-width: 230px;
+            min-width: 220px;
 
             .Team1 {
               display: grid;
