@@ -13,11 +13,13 @@ const QuickLook: React.FC = () => {
   return (
     <div className="QuickLook">
       <div className="Seasons">
-        {previousTiers?.map((prevTier) => (
-          <div className="SeasonBadge" key={`SeasonBadge_${prevTier.season}`}>
-            S{prevTier.season} {prevTier.tier}
-          </div>
-        ))}
+        <div className="SeasonBadges">
+          {previousTiers?.map((prevTier) => (
+            <div className="SeasonBadge" key={`SeasonBadge_${prevTier.season}`}>
+              S{prevTier.season} {prevTier.tier}
+            </div>
+          ))}
+        </div>
       </div>
       <div className="QuickLookBottomContainer">
         <img className="Avatar" src={summoner.profileImageUrl} alt="avatar" />
