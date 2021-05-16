@@ -1,4 +1,3 @@
-
 /**
  * 며칠전인지 몇시간전인지 스트링으로 얻음
  * @param createDate Linux Epoch Time
@@ -12,10 +11,13 @@ const getTimeAgoString = (createDate: number) => {
   const diffTime = diff / (1000 * 60 * 60);
 
   if (diffTime < 1) {
-    return `${Math.ceil(diffTime / 60)} mins ago`;
+    const diffMin = Math.ceil(diffTime / 60);
+    if (diffMin === 1) return `a minute ago`;
+    return `${diffMin} mins ago`;
   }
 
   if (diffTime < 24) {
+    if (Math.ceil(diffTime) === 1) return `an hour ago`;
     return `${Math.ceil(diffTime)} hours ago`;
   }
   if (diffTime < 48) {
