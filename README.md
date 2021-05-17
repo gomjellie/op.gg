@@ -2,7 +2,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # OP.GG HIRE ME
 
-<img width="1079" alt="Screen Shot 2021-05-14 at 9 30 14 AM" src="https://user-images.githubusercontent.com/13645032/118203483-26443e00-b497-11eb-91a2-ccd4567c8977.png">
+[Demo](https://opgg.surge.sh)
+
+<img width="1087" alt="Screen Shot 2021-05-17 at 8 27 05 PM" src="https://user-images.githubusercontent.com/13645032/118481631-a6e09400-b74e-11eb-833e-1a40c346a281.png">
+
+<img width="1087" alt="Screen Shot 2021-05-17 at 8 26 35 PM" src="https://user-images.githubusercontent.com/13645032/118481636-a7792a80-b74e-11eb-94f6-f5bd52a0d778.png">
+
+<img width="1088" alt="Screen Shot 2021-05-17 at 8 26 59 PM" src="https://user-images.githubusercontent.com/13645032/118481641-a8aa5780-b74e-11eb-8830-7f84e90d5acf.png">
 
 ## `npm run start`
 
