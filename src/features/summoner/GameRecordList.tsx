@@ -11,7 +11,7 @@ const GameRecordList: React.FC = () => {
     return <div className="GameRecords" />;
   }
 
-  const selectedGames = games.filter((game) => {
+  const filteredGames = games.filter((game) => {
     if (gameType === "Total") return true;
     if (gameType === "Ranked Flex") {
       return game.gameType === "Flex 5:5 Rank";
@@ -20,11 +20,11 @@ const GameRecordList: React.FC = () => {
     return game.gameType === gameType;
   });
 
-  if (selectedGames.length === 0) return null;
+  if (filteredGames.length === 0) return null;
 
   return (
     <div className="GameRecords">
-      {selectedGames.map((game) => (
+      {filteredGames.map((game) => (
         <GameRecord
           game={game}
           key={`GameRecord_${game.summonerId}_${game.createDate}`}
