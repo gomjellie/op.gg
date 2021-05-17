@@ -58,7 +58,14 @@ const OverView: React.FC = () => {
             {summary.wins + summary.losses}G {summary.wins}W {summary.losses}L
           </div>
           <div className="ChartContainer">
-            <Pie type data={chartDataFactory()} />
+            <Pie
+              type
+              data={chartDataFactory()}
+              options={{
+                tooltip: { enabled: false },
+                hover: { mode: null },
+              }}
+            />
             <div className="CurrentWinRatio">
               {fp(summary.wins * 100, summary.wins + summary.losses, 0)}%
             </div>
@@ -79,11 +86,19 @@ const OverView: React.FC = () => {
             </div>
           </div>
           <div className="Avg">
-            <div className={`KDARatio ${colorOfKDA((summary.kills + summary.assists) / summary.deaths)}`}>
+            <div
+              className={`KDARatio ${colorOfKDA(
+                (summary.kills + summary.assists) / summary.deaths
+              )}`}
+            >
               {fp(summary.kills + summary.assists, summary.deaths, 2)}:1
             </div>
             (
-            <div className={`WinRatio ${colorOfWinRatio(summary.wins / (summary.wins + summary.losses))}`}>
+            <div
+              className={`WinRatio ${colorOfWinRatio(
+                summary.wins / (summary.wins + summary.losses)
+              )}`}
+            >
               {fp(summary.wins * 100, summary.wins + summary.losses, 0)}%
             </div>
             )
@@ -102,13 +117,21 @@ const OverView: React.FC = () => {
               <div className="RContainer">
                 <div className="Up">{champ.name}</div>
                 <div className="Down">
-                  <span className={`WinRatio ${colorOfWinRatio(champ.wins / champ.games)}`}>
+                  <span
+                    className={`WinRatio ${colorOfWinRatio(
+                      champ.wins / champ.games
+                    )}`}
+                  >
                     {fp(champ.wins * 100, champ.games, 0)}%
                   </span>
                   <span className="WinLoose">
                     ({champ.wins}W {champ.losses}L)
                   </span>
-                  <span className={`KDA ${colorOfScore((champ.kills + champ.assists) / champ.deaths)}`}>
+                  <span
+                    className={`KDA ${colorOfScore(
+                      (champ.kills + champ.assists) / champ.deaths
+                    )}`}
+                  >
                     {fp(champ.kills + champ.assists, champ.deaths, 2)} KDA
                   </span>
                 </div>
@@ -137,7 +160,11 @@ const OverView: React.FC = () => {
                     {fp(position.games * 100, 20, 0)}%
                   </span>
                   <span className="WRPrefix">Win Ratio</span>
-                  <span className={`WinRatio ${colorOfWinRatio(position.wins / position.games)}`}>
+                  <span
+                    className={`WinRatio ${colorOfWinRatio(
+                      position.wins / position.games
+                    )}`}
+                  >
                     {fp(position.wins * 100, position.games, 0)}%
                   </span>
                 </div>
