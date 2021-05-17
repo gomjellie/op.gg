@@ -1380,6 +1380,60 @@
   outline: none;
 }
 
+.SummonerSearchInputWrapper .SummonerAutoCompleteContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  background-color: white;
+}
+
+.SummonerSearchInputWrapper .SummonerAutoCompleteContainer .SummonerAutoCompletes {
+  width: 100%;
+}
+
+.SummonerSearchInputWrapper .SummonerAutoCompleteContainer .SummonerAutoCompletes .SummonerAutoComplete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50px;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.SummonerSearchInputWrapper .SummonerAutoCompleteContainer .SummonerAutoCompletes .SummonerAutoComplete:hover {
+  background-color: #eaeaea;
+}
+
+.SummonerSearchInputWrapper .SummonerAutoCompleteContainer .SummonerAutoCompletes .SummonerAutoComplete .Avatar {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  margin-left: 0.8rem;
+}
+
+.SummonerSearchInputWrapper .SummonerAutoCompleteContainer .SummonerAutoCompletes .SummonerAutoComplete .SummonerInfoRight .AutoCompleteSummonerTier {
+  color: #9c9c9c;
+}
+
 .SummonerSearchInputWrapper .SummonerSearchSuggestsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1446,8 +1500,11 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-left: 1.5rem;
-  margin-right: 1rem;
   height: 2.2rem;
+}
+
+.SummonerSearchInputWrapper .SummonerSearchSuggestsContainer .SummonerSearched:hover {
+  background-color: #eaeaea;
 }
 
 .SummonerSearchInputWrapper .SummonerSearchSuggestsContainer .SummonerSearched .SummonerName {
@@ -1459,6 +1516,7 @@
 .SummonerSearchInputWrapper .SummonerSearchSuggestsContainer .SummonerSearched .DeleteHistoryBtn {
   display: block;
   height: 10px;
+  margin-right: 1rem;
   cursor: pointer;
 }
 

@@ -22,6 +22,44 @@
     }
   }
 
+  .SummonerAutoCompleteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: white;
+
+    .SummonerAutoCompletes {
+      width: 100%;
+      .SummonerAutoComplete {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        gap: 0.8rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $bgGray;
+        }
+
+        .Avatar {
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: fill;
+          margin-left: 0.8rem;
+        }
+
+        .SummonerInfoRight .AutoCompleteSummonerTier {
+          color: #9c9c9c;
+        }
+      }
+    }
+  }
+
   .SummonerSearchSuggestsContainer {
     display: flex;
     flex-direction: column;
@@ -63,8 +101,11 @@
       align-items: center;
       justify-content: space-between;
       padding-left: 1.5rem;
-      margin-right: 1rem;
       height: 2.2rem;
+
+      &:hover {
+        background-color: $bgGray;
+      }
 
       .SummonerName {
         font-size: 12px;
@@ -75,6 +116,7 @@
       .DeleteHistoryBtn {
         display: block;
         height: 10px;
+        margin-right: 1rem;
         cursor: pointer;
       }
     }

@@ -8,6 +8,7 @@ import GGSvg from "../assets/GG.svg";
 import CloseIcon from "../assets/close.png";
 import useLocalStorage from "../hooks/useLocalStorage";
 import useOnClickOutside from "../hooks/useOnClickOutside";
+import DefaultAvatar from "../assets/avatar.jpg";
 
 const SummonerSearchInput: React.FC = () => {
   const history = useHistory();
@@ -64,7 +65,10 @@ const SummonerSearchInput: React.FC = () => {
         .reverse()
         .map((user, idx) => {
           return (
-            <div className="SummonerSearched" key={`SummonerSearched_${user}_${idx}`}>
+            <div
+              className="SummonerSearched"
+              key={`SummonerSearched_${user}_${idx}`}
+            >
               <span className="SummonerName" onClick={() => onSearch(user)}>
                 {user}
               </span>
@@ -72,6 +76,23 @@ const SummonerSearchInput: React.FC = () => {
             </div>
           );
         })}
+    </div>
+  );
+
+  const renderedAutoComplete = (
+    <div className="SummonerAutoCompleteContainer">
+      <div className="SummonerAutoCompletes">
+        <div
+          className="SummonerAutoComplete"
+          onClick={() => onSearch(summonerName)}
+        >
+          <img className="Avatar" src={DefaultAvatar} alt="" />
+          <div className="SummonerInfoRight">
+            <div className="AutoCompleteSummonerName">{summonerName}</div>
+            <div className="AutoCompleteSummonerTier">Platinum 4 - 81LP</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
   return (
@@ -88,7 +109,8 @@ const SummonerSearchInput: React.FC = () => {
         />
         <img height="14" src={GGSvg} alt="GG" />
       </div>
-      {focused ? renderedSearchSuggests : null}
+      {focused && summonerName.length > 0 ? renderedAutoComplete : null}
+      {focused && summonerName.length === 0 ? renderedSearchSuggests : null}
     </div>
   );
 };
