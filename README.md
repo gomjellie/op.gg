@@ -26,3 +26,11 @@ See the section about deployment for more information.
 
 Serves the app for production build.
 
+## serve with surge
+
+```sh
+npm run build
+cd ./build
+cp index.html 200.html
+npx surge
+```
