@@ -1489,6 +1489,10 @@
   color: #9c9c9c;
 }
 
+.SummonerSearchInputWrapper .SummonerSearchSuggestsContainer .TabContainer .SearchTabItemBtn.disabled {
+  cursor: not-allowed !important;
+}
+
 .SummonerSearchInputWrapper .SummonerSearchSuggestsContainer .SummonerSearched {
   display: -webkit-box;
   display: -ms-flexbox;

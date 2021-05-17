@@ -64,7 +64,7 @@ const SummonerSearchInput: React.FC = () => {
     <div className="SummonerSearchSuggestsContainer">
       <div className="TabContainer">
         <div className="SearchTabItemBtn selected">Recent Search</div>
-        <div className="SearchTabItemBtn">Favorites</div>
+        <div className="SearchTabItemBtn disabled">Favorites</div>
       </div>
       {serachHistory
         .slice(-5)
