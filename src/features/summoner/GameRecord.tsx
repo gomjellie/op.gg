@@ -3,6 +3,7 @@ import RedWardIcon from "../../assets/wards/red.png";
 import BuildIcon from "../../assets/buildred.png";
 import { Game } from "./t.matches";
 import { toFloatPrecision as fp } from "../../utils/numbers";
+import { itemParser } from "../../utils/parser";
 import { getTimeAgoString } from "../../utils/dates";
 import MatchDetails from "./t.matchDetails";
 import { Link } from "react-router-dom";
@@ -10,20 +11,26 @@ import { useDispatch } from "react-redux";
 import { fetchMatches } from "./matchesSlice";
 import { fetchMost } from "./mostSlice";
 import { fetchSummoner } from "./summonerSlice";
+import ReactTooltip from "react-tooltip";
+import { exampleItems as savedItems } from "./t.items";
 
 const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   imageUrl,
   summonerName,
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <div className="Player">
       <img className="Champion" src={imageUrl} alt="" />
-      <Link to={`/summoner/userName=${summonerName}`} onClick={() => {
-        dispatch(fetchSummoner(summonerName));
-        dispatch(fetchMatches(summonerName));
-        dispatch(fetchMost(summonerName));
-      }} className="SummonerName">
+      <Link
+        to={`/summoner/userName=${summonerName}`}
+        onClick={() => {
+          dispatch(fetchSummoner(summonerName));
+          dispatch(fetchMatches(summonerName));
+          dispatch(fetchMost(summonerName));
+        }}
+        className="SummonerName"
+      >
         {summonerName}
       </Link>
     </div>
@@ -85,8 +92,15 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
     return champUrl.split("champion/")[1].split(".png")[0];
   };
 
+  // const renderedItemTips = (
+  //   <>
+  //     <MemoItemTips />
+  //   </>
+  // );
+
   return (
     <div className={`GameRecord ${vd}`}>
+      {/* {renderedItemTips} */}
       <div className="GR1">
         <div className="GameType">{game.gameType}</div>
         <time className="TimeAgo">{getTimeAgoString(game.createDate)}</time>
@@ -164,20 +178,47 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
           ]
             .slice(0, 7)
             .map((item, idx) => {
-              if (item.imageUrl === null)
+              if (item.imageUrl === null) {
                 return (
                   <div
                     className="Item"
                     key={`Game_${game.gameId}_Item_Empty_${idx}`}
                   />
                 );
+              }
+
+              const itemId = itemParser(item.imageUrl);
               return (
-                <img
-                  className="Item"
-                  src={item.imageUrl}
-                  alt=""
+                <div
+                  className="ItemWrapper"
                   key={`Game_${game.gameId}_Item_${item.imageUrl}_${idx}`}
-                />
+                >
+                  <img
+                    className="Item"
+                    src={item.imageUrl}
+                    alt=""
+                    data-tip
+                    data-for={`${itemId}`}
+                  />
+                  <ReactTooltip
+                    id={`${itemId}`}
+                    key={`ItemTips_${itemId}_${idx}`}
+                  >
+                    <div className="ItemTooltip">
+                      <b className="TooltipItemName">
+                        {savedItems[itemId].name}
+                      </b>
+                      <br />
+                      <span className="TooltipItemPlainText">{savedItems[itemId].plaintext}</span>
+                      <br />
+                      <span>Cost: </span>
+                      <span className="TooltipItemPrice">
+                        {savedItems[itemId].gold.base} (
+                        {savedItems[itemId].gold.base})
+                      </span>
+                    </div>
+                  </ReactTooltip>
+                </div>
               );
             })}
           <img className="Item" src={BuildIcon} alt="Build" />

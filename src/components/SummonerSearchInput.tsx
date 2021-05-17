@@ -63,9 +63,10 @@ const SummonerSearchInput: React.FC = () => {
   useOnClickOutside(wrapperRef, handleClickOutside);
 
   useEffect(() => {
-    getSummoner(summonerName).then((responseSummoner) => {
-      setSummoner(responseSummoner);
-    });
+    if (summonerName.length > 0)
+      getSummoner(summonerName).then((responseSummoner) => {
+        setSummoner(responseSummoner);
+      });
   }, [summonerName]);
 
   const renderedSearchSuggests = (
@@ -108,7 +109,9 @@ const SummonerSearchInput: React.FC = () => {
           <img className="Avatar" src={summoner?.profileImageUrl} alt="" />
           <div className="SummonerInfoRight">
             <div className="AutoCompleteSummonerName">{summonerName}</div>
-            <div className="AutoCompleteSummonerTier">{summoner?.leagues?.[0].tierRank.string}</div>
+            <div className="AutoCompleteSummonerTier">
+              {summoner?.leagues?.[0].tierRank.string}
+            </div>
           </div>
         </div>
       </div>

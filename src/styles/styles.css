@@ -1322,6 +1322,19 @@
   text-decoration: none;
 }
 
+.ItemTooltip {
+  font-size: 12px;
+  line-height: 1.2rem;
+}
+
+.ItemTooltip .TooltipItemName {
+  color: #00cfbc;
+}
+
+.ItemTooltip .TooltipItemPrice {
+  color: #ffc659;
+}
+
 .Main {
   height: 100vh;
   width: 100vw;
