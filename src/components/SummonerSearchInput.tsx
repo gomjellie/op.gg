@@ -35,6 +35,7 @@ const SummonerSearchInput: React.FC = () => {
       return prevHistory.slice(-3).concat(query);
     });
     history.push(`/summoner/userName=${query}`);
+    setFocused(false);
   };
 
   const onKeyDown = (event: React.KeyboardEvent) => {

@@ -5,17 +5,27 @@ import { Game } from "./t.matches";
 import { toFloatPrecision as fp } from "../../utils/numbers";
 import { getTimeAgoString } from "../../utils/dates";
 import MatchDetails from "./t.matchDetails";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchMatches } from "./matchesSlice";
+import { fetchMost } from "./mostSlice";
+import { fetchSummoner } from "./summonerSlice";
 
 const PlayerStick: React.FC<{ imageUrl: string; summonerName: string }> = ({
   imageUrl,
   summonerName,
 }) => {
+  const dispatch = useDispatch()
   return (
     <div className="Player">
       <img className="Champion" src={imageUrl} alt="" />
-      <a href={`/summoner/userName=${summonerName}`} className="SummonerName">
+      <Link to={`/summoner/userName=${summonerName}`} onClick={() => {
+        dispatch(fetchSummoner(summonerName));
+        dispatch(fetchMatches(summonerName));
+        dispatch(fetchMost(summonerName));
+      }} className="SummonerName">
         {summonerName}
-      </a>
+      </Link>
     </div>
   );
 };
