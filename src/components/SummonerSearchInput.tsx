@@ -45,6 +45,12 @@ const SummonerSearchInput: React.FC = () => {
     }
   };
 
+  const onDeleteHistory = (query: string) => {
+    setSearchHistory((prevHistory) => {
+      return prevHistory.filter((h) => h !== query);
+    });
+  };
+
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSummonerName(event.target.value);
   };
@@ -72,7 +78,12 @@ const SummonerSearchInput: React.FC = () => {
               <span className="SummonerName" onClick={() => onSearch(user)}>
                 {user}
               </span>
-              <img className="DeleteHistoryBtn" src={CloseIcon} alt="GG" />
+              <img
+                className="DeleteHistoryBtn"
+                src={CloseIcon}
+                alt="Close"
+                onClick={() => onDeleteHistory(user)}
+              />
             </div>
           );
         })}
