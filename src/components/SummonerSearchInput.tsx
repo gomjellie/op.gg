@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { fetchSummoner } from "../features/summoner/summonerSlice";
@@ -8,12 +8,14 @@ import GGSvg from "../assets/GG.svg";
 import CloseIcon from "../assets/close.png";
 import useLocalStorage from "../hooks/useLocalStorage";
 import useOnClickOutside from "../hooks/useOnClickOutside";
-import DefaultAvatar from "../assets/avatar.jpg";
+import { getSummoner } from "../api/summoner";
+import Summoner from "../features/summoner/t.summoner";
 
 const SummonerSearchInput: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [summonerName, setSummonerName] = useState("");
+  const [summoner, setSummoner] = useState<Summoner>();
   const [focused, setFocused] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [serachHistory, setSearchHistory] = useLocalStorage<string[]>(
@@ -60,6 +62,12 @@ const SummonerSearchInput: React.FC = () => {
 
   useOnClickOutside(wrapperRef, handleClickOutside);
 
+  useEffect(() => {
+    getSummoner(summonerName).then((responseSummoner) => {
+      setSummoner(responseSummoner);
+    });
+  }, [summonerName]);
+
   const renderedSearchSuggests = (
     <div className="SummonerSearchSuggestsContainer">
       <div className="TabContainer">
@@ -97,15 +105,16 @@ const SummonerSearchInput: React.FC = () => {
           className="SummonerAutoComplete"
           onClick={() => onSearch(summonerName)}
         >
-          <img className="Avatar" src={DefaultAvatar} alt="" />
+          <img className="Avatar" src={summoner?.profileImageUrl} alt="" />
           <div className="SummonerInfoRight">
             <div className="AutoCompleteSummonerName">{summonerName}</div>
-            <div className="AutoCompleteSummonerTier">Platinum 4 - 81LP</div>
+            <div className="AutoCompleteSummonerTier">{summoner?.leagues?.[0].tierRank.string}</div>
           </div>
         </div>
       </div>
     </div>
   );
+
   return (
     <div
       className="SummonerSearchInputWrapper"
