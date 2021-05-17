@@ -124,6 +124,7 @@ const SummonerSearchInput: React.FC = () => {
       <div className="SummonerSearchInput">
         <input
           placeholder="Name1, Name2, ..."
+          autoComplete="off"
           onKeyDown={onKeyDown}
           onChange={onChangeInput}
         />
