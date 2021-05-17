@@ -43,6 +43,8 @@ const SummonerSearchInput: React.FC = () => {
 
   const onKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
+      if (summonerName === "")
+        return;
       onSearch(summonerName);
     }
   };
