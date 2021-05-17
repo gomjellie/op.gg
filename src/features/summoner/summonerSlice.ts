@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import Summoner, { exampleSummoner } from "./t.summoner";
+import Summoner from "./t.summoner";
+import { getSummoner } from "../../api/summoner";
 import { RootState } from "../../app/store";
 
 type Status = "idle" | "loading" | "failed" | "succeeded";
@@ -12,15 +13,7 @@ const initialState: { model?: Summoner; status: Status } = {
 export const fetchSummoner = createAsyncThunk(
   "/summoner/fetchSummoner",
   async (summonerName: string) => {
-    try {
-      const response = await fetch(
-        `https://codingtest.op.gg/api/summoner/${summonerName}?hl=en`
-      ).then((res) => res.json());
-
-      return (response as { summoner: Summoner }).summoner;
-    } catch {
-      return exampleSummoner;
-    }
+    return getSummoner(summonerName);
   }
 );
 
