@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # OP.GG HIRE ME
 
-[Demo](https://opgg.surge.sh)
+[https://opgg.surge.sh - DEMO Homepage](https://opgg.surge.sh)
 
 <img width="1087" alt="Screen Shot 2021-05-17 at 8 27 05 PM" src="https://user-images.githubusercontent.com/13645032/118481631-a6e09400-b74e-11eb-833e-1a40c346a281.png">
 
