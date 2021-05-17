@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Matches, { exampleMatches } from "./t.matches";
+import Matches from "./t.matches";
+import { getMatches } from "../../api/matches";
 import { RootState } from "../../app/store";
 
 type GameType = "Total" | "Ranked Solo" | "Ranked Flex";
@@ -15,15 +16,7 @@ const initialState: { model?: Matches; status: Status; gameType: GameType } = {
 export const fetchMatches = createAsyncThunk(
   "/matches/fetchMatches",
   async (summonerName: string) => {
-    try {
-      const response = await fetch(
-        `https://codingtest.op.gg/api/summoner/${summonerName}/matches?hl=en`
-      ).then((res) => res.json());
-
-      return response as Matches;
-    } catch {
-      return exampleMatches;
-    }
+    return getMatches(summonerName);
   }
 );
 

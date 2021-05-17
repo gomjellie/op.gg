@@ -62,8 +62,8 @@ const OverView: React.FC = () => {
               type
               data={chartDataFactory()}
               options={{
-                tooltip: { enabled: false },
-                hover: { mode: null },
+                tooltips: { enabled: false },
+                // hover: { mode: null },
               }}
             />
             <div className="CurrentWinRatio">

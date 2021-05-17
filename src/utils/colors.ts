@@ -6,7 +6,7 @@
  * @param KDA
  * @returns {String} color
  */
-const colorOfKDA = (KDA: number) => {
+const colorOfKDA = (KDA: number): string => {
   if (KDA < 3) return "kdaDefault";
   if (KDA < 4) return "kdaGreen";
   if (KDA < 5) return "kdaBlue";
@@ -19,10 +19,10 @@ const colorOfKDA = (KDA: number) => {
  * @param winRatio 승률
  * @returns {String} color
  */
-const colorOfWinRatio = (winRatio: number) => {
+const colorOfWinRatio = (winRatio: number): string => {
   if (winRatio < 0.6) return "winRatioDefault";
   return "winRatioRed";
-}
+};
 
 /**
  * 평점에 따라서 색상을 골라준다.
@@ -32,6 +32,6 @@ const colorOfWinRatio = (winRatio: number) => {
 const colorOfScore = (score: number) => {
   if (score < 6.0) return "scoreDefault";
   return "scoreYellow";
-}
+};
 
 export { colorOfKDA, colorOfWinRatio, colorOfScore };

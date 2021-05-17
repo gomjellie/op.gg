@@ -1,5 +1,3 @@
-
-
 /**
  * 1 / 3 에 자릿수 2면
  * 0.33
@@ -8,7 +6,7 @@
  * @param precision 자릿수
  * @returns
  */
- const toFloatPrecision = (
+const toFloatPrecision = (
   numerator: number,
   denominator: number,
   precision: number = 1

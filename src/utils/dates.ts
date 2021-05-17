@@ -3,7 +3,7 @@
  * @param createDate Linux Epoch Time
  * @returns {String}
  */
-const getTimeAgoString = (createDate: number) => {
+const getTimeAgoString = (createDate: number): string => {
   const today = new Date();
   const backThen = new Date(createDate * 1000);
 

@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Most, { exampleMost } from "./t.most";
+import Most from "./t.most";
+import { getMost } from "../../api/most";
 import { RootState } from "../../app/store";
 
 type MostType = "Champion Win Ratio" | "Rank win rate per week";
@@ -15,15 +16,7 @@ const initialState: { model?: Most; status: Status; mostType: MostType } = {
 export const fetchMost = createAsyncThunk(
   "/most/fetchMost",
   async (summonerName: string) => {
-    try {
-      const response = await fetch(
-        `https://codingtest.op.gg/api/summoner/${summonerName}/mostInfo?hl=en`
-      ).then((res) => res.json());
-
-      return response as Most;
-    } catch {
-      return exampleMost;
-    }
+    return getMost(summonerName);
   }
 );
 
@@ -53,7 +46,9 @@ export const selectMostChampions = (state: RootState) =>
   state.most.model?.champions.slice().sort((c1, c2) => c2.games - c1.games);
 
 export const selectMostRecents = (state: RootState) =>
-  state.most.model?.recentWinRate.slice().sort((c1, c2) => (c2.wins + c2.losses) - (c1.wins + c1.losses));
+  state.most.model?.recentWinRate
+    .slice()
+    .sort((c1, c2) => c2.wins + c2.losses - (c1.wins + c1.losses));
 
 export const selectMostType = (state: RootState) => state.most.mostType;
 

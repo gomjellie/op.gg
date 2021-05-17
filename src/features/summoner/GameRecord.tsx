@@ -92,15 +92,8 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
     return champUrl.split("champion/")[1].split(".png")[0];
   };
 
-  // const renderedItemTips = (
-  //   <>
-  //     <MemoItemTips />
-  //   </>
-  // );
-
   return (
     <div className={`GameRecord ${vd}`}>
-      {/* {renderedItemTips} */}
       <div className="GR1">
         <div className="GameType">{game.gameType}</div>
         <time className="TimeAgo">{getTimeAgoString(game.createDate)}</time>
@@ -209,7 +202,9 @@ const GameRecord: React.FC<{ game: Game }> = ({ game }) => {
                         {savedItems[itemId].name}
                       </b>
                       <br />
-                      <span className="TooltipItemPlainText">{savedItems[itemId].plaintext}</span>
+                      <span className="TooltipItemPlainText">
+                        {savedItems[itemId].plaintext}
+                      </span>
                       <br />
                       <span>Cost: </span>
                       <span className="TooltipItemPrice">
