@@ -5,14 +5,14 @@ const Footer: React.FC = () => {
     <div className="footer">
       <ul className="footer__links">
         <li className="footer__links__item">
-          <a href="/about/">About OP.GG</a>
+          <a href="https://www.op.gg//about/">About OP.GG</a>
         </li>
         <li className="footer__links__item">
-          <a href="/about/logos">Logo History</a>
+          <a href="https://www.op.gg/about/logos/">Logo History</a>
         </li>
         <li className="footer__links__item">
           <b>
-            <a href="/about/privacy/">Privacy Policy</a>
+            <a href="https://www.op.gg//about/privacy/">Privacy Policy</a>
           </b>
         </li>
         <li className="footer__links__item">
