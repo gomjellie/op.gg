@@ -7,13 +7,15 @@
 @import "./tooltip";
 @import "./main";
 @import "./summonerSearchInput";
+@import "./footer";
 
 html {
   height: 100%;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont;
+  // font-family: -apple-system, BlinkMacSystemFont;
+  font-family: "Helvetica Neue",Helvetica,"Apple SD Gothic Neo",AppleGothic,Dotum,Arial,Tahoma;
   margin: 0;
   display: block;
   background-color: $bgGray;
