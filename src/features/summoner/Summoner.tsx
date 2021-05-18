@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
+import Footer from "../../components/Footer";
 import SearchBar from "./SearchBar";
 import QuickLook from "./QuickLook";
 import Summary from "./Summary";
@@ -91,6 +92,8 @@ const Summoner: React.FC<RouteComponentProps<MatchParams>> = ({ match }) => {
           <GameRecordList />
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
