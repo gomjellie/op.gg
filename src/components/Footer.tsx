@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         </li>
         <li className="footer__links__item">
           <b>
-            <a href="https://www.op.gg//about/privacy/">Privacy Policy</a>
+            <a href="https://www.op.gg/about/privacy/">Privacy Policy</a>
           </b>
         </li>
         <li className="footer__links__item">
